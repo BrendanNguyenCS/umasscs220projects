@@ -1,0 +1,144 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{color, colortbl} % For table coloring
+\usepackage{titling} % For positioning of title preamble
+\usepackage[margin=1in]{geometry} % For margin width setting
+\usepackage{comment} % For block commenting
+\usepackage{float} % For table positioning
+\usepackage{amsmath} % For math formatting
+
+% Move title area to the top of the page
+\setlength{\droptitle}{-4em}
+\addtolength{\droptitle}{-4pt} 
+\setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1.25}
+% Disable paragraph indenting
+\setlength{\parindent}{0pt}
+
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+
+\title{CS220 Discrete Math - Homework \#1}
+\author{Brendan Nguyen - \texttt{brendan.nguyen001@umb.edu}}
+\date{February 3, 2022}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question 1}
+The expanded form of the given compound composition is:
+
+\begin{equation*}
+    \begin{split}
+        \bigwedge_{i=1}^{n-1} \bigwedge_{j=i+1}^n (\neg p_i \vee \neg p_j) &= (\neg p_1 \vee \neg p_2) \wedge (\neg p_1 \vee \neg p_3) \wedge (\neg p_1 \vee \neg p_4)\\
+        &\quad\wedge ... \wedge (\neg p_1 \vee \neg p_n) \wedge (\neg p_2 \vee \neg p_3) \wedge ... \wedge (\neg p_2 \vee \neg p_n)\\
+        &\quad\wedge ... \wedge (\neg p_{n-1} \vee \neg p_n)
+    \end{split}
+\end{equation*}
+	
+Using what we know:
+
+\begin{enumerate}
+  \item DeMorgan's Law: $(\neg p_i \vee \neg p_j) = \neg (p_i \wedge p_j)$
+  \item The above should be $\texttt{true}$ for all $i$ and $j$
+\end{enumerate}
+
+Statement 2 implies that $(p_i \wedge p_j)$ should be $\texttt{false}$ for all $i$ and $j$, which can only be fulfilled for at most 1 $p$ that is $\texttt{true}$. The case of at most 1 $p$ that is $\texttt{true}$ results in $(\neg p_i \vee \neg p_j)$ is always $\texttt{true}$.
+
+\section*{Question 2}
+
+The truth table is as follows:
+\begin{table}[H]
+\centering
+    \begin{tabular}{|c c c|c|c|c|c|c|}
+    \hline
+    $p$ & $q$ & $r$ & $p \wedge q$ & $\neg r$ & $(p \wedge q) \vee \neg r$ \\ \hline
+    T & T & T & T & F & T\\ \hline
+    T & T & F & T & T & T\\ \hline
+    T & F & T & F & F & F\\ \hline
+    T & F & F & F & T & T\\ \hline
+    F & T & T & F & F & F\\ \hline
+    F & T & F & F & T & T\\ \hline
+    F & F & T & F & F & F\\ \hline
+    F & F & F & F & T & T\\ \hline
+    \end{tabular}
+    \caption{Expanded truth table for $(p \wedge q) \vee \neg r$}
+    \label{table:1}
+\end{table}
+
+\section*{Question 3}
+
+The statement "This statement is false" is a proposition because it declares a fact that is either true or false but not both.
+
+\section*{Question 4}
+
+Testing the truth values of $p$ and $q$ for the compound proposition, you get:
+
+\begin{table}[H]
+\centering
+    \begin{tabular}{|c c|c|c|c|c|c|}
+    \hline
+    $p$ & $q$ & $\neg p$ & $p \to q$ & $\neg p \wedge (p \to q)$ & $\neg q$ & $(\neg p \wedge (p \to q)) \to \neg q$\\ \hline
+    F & F & T & T & T & T & T\\ \hline
+    F & T & T & T & T & F & F\\ \hline
+    T & F & F & F & F & T & T\\ \hline
+    T & T & F & T & F & F & T\\ \hline
+    \end{tabular}
+    \caption{Expanded truth table for $(\neg p \wedge (p \to q)) \to \neg q$}
+    \label{table:2}
+\end{table}
+
+By definition of a tautology, the compound proposition $(\neg p \wedge (p \to q)) \to \neg q$ is not a tautology because not all truth values are true for all $p$ and $q$.
+
+\section*{Question 5}
+
+The simplest way to evaluate the logical equivalence of the compound propositions $(p \to q) \vee (p \to r)$ and $p \to (q \vee r)$ is to compare their truth tables.
+
+\begin{comment}
+Combine the 2 following tables and highlight the columns with the compound propositions
+\end{comment}
+
+\newcolumntype{g}{>{\columncolor{LightCyan}}c}
+\begin{table}[H]
+\centering
+    \begin{tabular}{|c c c|c|c|g|c|g|}
+    \hline
+    $p$ & $q$ & $r$ & $p \to q$ & $p \to r$ & $(p \to q) \vee (p \to r)$  & $q \vee r$ & $p \to (q \vee r)$\\ \hline
+    T & T & T & T & T & T & T & T\\ \hline
+    T & T & F & T & F & T & T & T\\ \hline
+    T & F & T & F & T & T & T & T\\ \hline
+    T & F & F & F & F & F & F & F\\ \hline
+    F & T & T & T & T & T & T & T\\ \hline
+    F & T & F & T & T & T & T & T\\ \hline
+    F & F & T & T & T & T & T & T\\ \hline
+    F & F & F & T & T & T & T & T\\ \hline
+    \end{tabular}
+    \caption{Expanded truth tables for $(p \to q) \vee (p \to r)$ and $p \to (q \vee (p \to r)$}
+    \label{table:3}
+\end{table}
+
+% Second compound proposition truth table
+\begin{comment}
+\begin{table}[H]
+\centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    $p$ & $q$ & $r$ & $q \vee r$ & $p \to (q \vee r)$\\ \hline
+    T & T & T & T & T\\ \hline
+    T & T & F & T & T\\ \hline
+    T & F & T & T & T\\ \hline
+    T & F & F & F & F\\ \hline
+    F & T & T & T & T\\ \hline
+    F & T & F & T & T\\ \hline
+    F & F & T & T & T\\ \hline
+    F & F & F & T & T\\ \hline
+    \end{tabular}
+    \caption{Expanded truth table for $p \to (q \vee (p \to r)$}
+    \label{table:4}
+\end{table}
+\end{comment}
+
+Comparing the 2 truth tables shown in Table \ref{table:3}, you can see that for all $p$, $q$, and $r$, the truth values of the compound propositions are equivalent.
+
+\end{document}  
