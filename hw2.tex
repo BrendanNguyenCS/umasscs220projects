@@ -3,14 +3,20 @@
 \usepackage{titling} % For positioning of title preamble
 \usepackage[margin=1in]{geometry} % For margin width setting
 \usepackage{comment} % For block commenting
+\usepackage{enumitem} % For list styling
+\usepackage{float} % For table positioning
+% For automatic table numbering
+\usepackage{array}
+\newcounter{rowno}
+\setcounter{rowno}{0}
 
 % Move title area to the top of the page
 \setlength{\droptitle}{-4em}
 \addtolength{\droptitle}{-4pt} 
 \setlength{\tabcolsep}{12pt}
 \renewcommand{\arraystretch}{1.25}
-% Disable paragraph indenting
-\setlength{\parindent}{0pt}
+% Increase width between table columns
+\setlength{\tabcolsep}{1cm}
 
 
 \title{CS220 Discrete Math - Homework \#2}
@@ -42,13 +48,58 @@
 
 \section*{Question 2}
 
+The argument with the given premises and the conclusion $r$ is valid as shown below:
+\begin{table}[H]
+    \begin{tabular}{>{\stepcounter{rowno}\therowno. }l l}
+         \multicolumn{1}{l}{\textbf{Step}} & \textbf{Reason} \\
+         $(p \wedge t) \to (r \vee s)$ & Premise\\
+         $\neg p \vee \neg t \vee r \vee s$ & Logical equivalence of (1)\\
+         $s \vee (\neg p \vee \neg t \vee r)$ & Commutative and Associative laws on (2)\\
+         $\neg s$ & Premise\\
+         $\neg p \vee \neg t \vee r$ & Disjunctive syllogism on (3) and (4)\\
+         $u \to p$ & Premise\\
+         $\neg u \vee p$ & Logical equivalence of (6)\\
+         $p \vee \neg u$ & Commutative law on (7)\\
+         $\neg u \vee \neg t \vee r$ & Resolution rule on (5) and (7)\\
+         $\neg (u \wedge t) \vee r$ & DeMorgan's Law on (9)\\
+         $(u \wedge t) \to r$ & Logical equivalence of (10)\\
+         $q \to (u \wedge t)$ & Premise\\
+         $q \to r$ & Hypothetical syllogism on (12) and (11)\\
+         $q$ & Premise\\
+         $r$ & Modus ponens on (14) and (13)
+    \end{tabular}
+\end{table}
+
 
 \section*{Question 3}
+Let the conditional statement $S$ be $(p \to q) \to q$, then we can use a truth table to see the truth values.
 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+         $p$ & $q$ & $p \to q$ & $(p \to q) \to q$  \\\hline
+         T & T & T & T\\\hline
+         T & F & F & T\\\hline
+         F & T & T & T\\\hline
+         F & F & T & F\\\hline
+    \end{tabular}
+    \caption{Truth table for $(p \to q) \to q$}
+    \label{tab:1}
+\end{table}
+
+In the statement above, $p$ represents the statement, "$S$ is true," and $q$ represents the statement, "Unicorns live." If $S$ is a proposition (in other words $p \to q$ is true), then $q$ is true, meaning that "Unicorns live." If $S$ is not a proposition, then it has both true and false values. We know that if $S$ is true, then $p$ is true. Both true and false for $q$ still results in true for $S$. If $S$ is false, then $(p \to q)$ is true, $p$ and $q$ are both false. Due to the fact that we can't determine the truth value of $S$, we can determine that $S$ is not a proposition by the definition that a statement can have a true or false value but not both.
 
 \section*{Question 4}
+The statement, "No one has more than two grandmothers," can be rewritten as, "There does not exists three different people that are grandmothers of the same person". We can translate this statement into a predicate as shown below:
 
+\[
+\forall x \Bigg[ \neg \exists w \exists y \exists z [ G(w,x) \wedge G(y,x) \wedge G(z,x) \wedge (w \neq y \neq z)] \> \Bigg]
+\]
+
+where $x$ is a person and $w$, $y$, and $z$ are grandmothers of person $x$.
 
 \section*{Question 5}
+Because $A$ is a nonempty set, you can say that $a \in A$. In order to prove if $B = C$, we denote a variable $x$ such that $x \in B$. Then by set product, we can say that $\langle a,x \rangle \in A \times B$. Using the original problem statement, $A \times B = A \times C$, we can then state that $\langle a,x \rangle \in A \times C$ and $x \in C$ using set product again. Therefore, $B$ is included in $C$. Now, since $A$ is a subset of $B$ because every element of $A$ is also an element of $B$, we can say that $B$ is a subset of $C$ and $C$ is a subset of $B$. Therefore, by this definition, we can state that $B = C$ since $B \subseteq C$ and $C \subseteq B$.
 
 \end{document}
