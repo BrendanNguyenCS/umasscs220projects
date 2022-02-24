@@ -9,6 +9,7 @@
 \usepackage{mathtools}
 % For math equation formatting
 \usepackage{amsmath, amssymb, relsize}
+\usepackage{parskip} % For automatic paragraph spacing/formatting
 
 % Move title area to the top of the page
 \setlength{\droptitle}{-4em}
@@ -17,6 +18,7 @@
 \renewcommand{\arraystretch}{1.25}
 % Increase width between table columns
 \setlength{\tabcolsep}{1cm}
+\setlength{\parskip}{1em}
 
 
 \title{CS220 Discrete Math - Homework \#3}
@@ -29,7 +31,7 @@
 
 \section*{Question 1}
 $A$, $B$, and $C$ are sets.
-\begin{flalign*}
+\begin{align*}
     (A - C) - (B - C) & = (A \cap C^c) \cap (B \cap C^c)^c&\\
     & = (A \cap C^c) \cap (B^c \cup C)&\\
     & = ((A \cap C^c) \cap B^c) \cup ((A \cap C^c) \cap C)&\\
@@ -37,7 +39,7 @@ $A$, $B$, and $C$ are sets.
     & = ((A \cap B^c) \cap C^c) \cup (A \cap \varnothing)&\\
     & = ((A - B) - C) \cup \varnothing&\\
     & = (A - B) - C
-\end{flalign*}
+\end{align*}
 
 \section*{Question 2}
 \newcommand*{\defeq}{\stackrel{\mathsmaller{\mathsf{def}}}{=}}
@@ -64,7 +66,13 @@ Meaning that $f(x)$ is strictly increasing.
 \end{enumerate}
 
 \section*{Question 4}
+\begin{align*}
+    \sum_{i=1}^{n} \frac{1}{i(i+1)} & = \sum_{k=1}^{n} \left(\frac{1}{k}-\frac{1}{k+1}\right)&\\
+    & = \frac{1}{1} - \frac{1}{2} + \frac{1}{2} - \frac{1}{3} + \frac{1}{3} - \frac{1}{4} + \cdots + \frac{1}{n} - \frac{1}{n+1}&\\
+    & = 1 - \frac{1}{n+1}
+\end{align*}
 
 \section*{Question 5}
+To show that the set of functions $\{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 \}$ is uncountable, we can use the fact that the set of all subsets of $\mathbb{N}$, $F(\mathbb{N})$, is uncountable. We see that the set of functions from $\mathbb{N}$ to $\{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 \}$ contains the set $\{0, 1\}^{\mathbb{N}}$ of functions from $\mathbb{N}$ to $\{0,1\}$ using injection. Therefore, you can say that there is a bijection between $F(\mathbb{N})$ and $\{0, 1\}^{\mathbb{N}}$. In conclusion, since the set $\{0,1\}^{\mathbb{N}}$ is uncountable and the set is a subset in the set $\{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 \}$, then we can say that the set $\{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 \}$ is also uncountable.
 
 \end{document}

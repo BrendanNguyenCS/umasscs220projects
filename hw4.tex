@@ -1,0 +1,132 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{titling} % For positioning of title preamble
+\usepackage[margin=1in]{geometry} % For margin width setting
+\usepackage{comment} % For block commenting
+\usepackage{enumitem} % For list styling
+\usepackage{float} % For table positioning
+% For math symbol formatting and other math tools
+\usepackage{mathtools}
+% For math equation formatting
+\usepackage{amsmath, amssymb, relsize}
+% For code blocks
+\usepackage{listings}
+\lstdefinestyle{mystyle}{
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+% For automatic paragraph spacing/formatting
+\usepackage{parskip}
+
+% Move title area to the top of the page
+\setlength{\droptitle}{-4em}
+\addtolength{\droptitle}{-4pt} 
+\setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1.25}
+% Disable paragraph indenting
+\setlength{\parindent}{0pt}
+% Increase width between table columns
+\setlength{\tabcolsep}{1cm}
+
+
+\title{CS220 Discrete Math - Homework \#4}
+\author{Brendan Nguyen - \texttt{brendan.nguyen001@umb.edu}}
+\date{February 24, 2022}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question 1}
+The definition of big-$\textit{O} notation$ tells you that have you to find the witnesses $C$ and $k$ such that $f(x) \leq C(g(x))$ when $f(x) = O(g(x))$.
+
+First, I tested $c=2$ and $k=2$. Testing the definition for $n=3$, I got $f(2.5) \leq c(g(2.5)) \to 25 \leq 54$. Although this pair seemed to work, when testing values approaching $n=2$, I found that $n=2.1$ fails the inequality ($f(2.1)=21.287$ and $2(g(2.1))=20.090$).
+
+Afterwards, I tested $c=2$ and $k=3$. Plugging in $n=4$, I got $f(4) \leq c(g(4)) \to 33 \leq 162$. Testing values approaching $n=3$ shows us that the $\textbf{witnesses}$ $c=2$ and $k=3$ are valid as no decimals fail the inequality.
+
+\section*{Question 2}
+According to the definition of big-$\textit{O}$ notation, we can say that:
+
+\[1^k + 2^k + \cdots + n^k < n^k + n^k + \cdots + n^k = n \times n^k = n^{k+1}\]
+
+Since the sum $(n^k + n^k + \cdots + n^k)$ is greater than the sum $(1^k + 2^k + \cdots + n^k)$ and is clearly $O(n^{k+1})$ since the sum is exactly $n^{k+1}$. Therefore the smaller sum of $(1^k + 2^k + \cdots + n^k)$ is also $O(n^{k+1})$.
+
+\section*{Question 3}
+There are some statements that we can say about the big-$\textit{O}$ estimates involved in the problem:
+\begin{enumerate}
+    \item Logarithmic functions grow slower than all positive powers of $n$ (i.e. $\sqrt{n}$, $n$, $n^2$, $n^3$, etc.)
+    \item Exponential functions grow faster than polynomial functions
+    \item Factorials grow faster than exponential functions
+\end{enumerate}
+
+With these statements in mind, we can order the given functions as such:
+
+\[(\log{n})^3, \sqrt{n}\log{n}, n^{99} + n^{98}, n^{100}, (1.5)^n, 10^n, (n!)^2\]
+
+We use Statement 1 to say that $(\log{n})^3$ is the slowest growing function. The next three can be placed in order of power of $n$ due to Statement 2 ($\frac{1}{2}$, 99, and 100, respectively). Statement 2 also puts the two exponential functions afterwards in order of base. Finally, the statement $(n!)^2$ is the fastest growing function due to Statement 3.
+
+\section*{Question 4}
+The C code block from page 50 and Exercise 2-9 of the C Programming Language by Kernighan and Ritchie, the second edition.
+
+\begin{lstlisting}[language=C]
+int bitCount(unsigned x) {
+    int count;
+    
+    for (count = 0; x != 0; x &= (x - 1))
+        count++;
+    return count;
+}
+\end{lstlisting}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+
+\begin{enumerate}
+    \item The best way to show that the above function returns the number of 1 bits in the unsigned integer $\texttt{x}$ is to use an example of the computation of unsigned int $\texttt{x = 7}$.
+    
+    
+    The first iteration of the loop would compare $\texttt{x = 7}$ and $\texttt{x = 6}$.
+    \[\begin{array}[t]{r}
+        \texttt{0111}\\
+    \texttt{\&} \ \texttt{0110}\\ \hline
+        \texttt{0110}
+    \end{array}\]
+    
+    The second iteration has a $\texttt{count = 1}$ with $\texttt{x = 6}$ and it would compare $\texttt{x = 6}$ and $\texttt{x = 5}$.
+    \[\begin{array}[t]{r}
+        \texttt{0110}\\
+    \texttt{\&} \ \texttt{0101}\\ \hline
+        \texttt{0100}
+    \end{array}\]
+    
+    The third iteration has a $\texttt{count = 2}$ with $\texttt{x = 4}$ and it would compare $\texttt{x = 4}$ and $\texttt{x = 3}$.
+    \[\begin{array}[t]{r}
+        \texttt{0100}\\
+    \texttt{\&} \ \texttt{0011}\\ \hline
+        \texttt{0000}
+    \end{array}\]
+    
+    Now the $\texttt{count = 3}$ and $\texttt{x = 0}$ so the loop would end. The $\texttt{count}$ now equals the number of 1 bits in the unsigned integer 7 ($\texttt{0111}$).
+    
+    \item The number of iterations equals the number of $\texttt{count}$ which equals the number of 1 bits in the unsigned integer $\texttt{x}$.
+\end{enumerate}
+
+\section*{Question 5}
+We can find which method is more efficient by analyzing the matrix multiplication operations for each method. In the case of $\texttt{(AB)C}$, you calculate the number of operations in $\texttt{AB}$ and add it to the operations of multiplying $\texttt{C}$ and the resulting matrix of $\texttt{AB}$. Similarly for $\texttt{A(BC)}$, you calculate the number of operations in $\texttt{BC}$ and add it to the operations of multiplying $\texttt{A}$ and the resulting matrix of $\texttt{BC}$.
+
+For the matrices $A$, $B$, and $C$ with dimensions $3 \times 9$, $9 \times 4$, and $4 \times 2$, respectively:
+
+\[\texttt{(AB)C} = (3 \times 9 \times 4) + (3 \times 4 \times 2) = 132 \ \text{integer multiplications}\]
+\[\texttt{A(BC)} = (9 \times 4 \times 2) + (3 \times 9 \times 2) = 126 \ \text{integer multiplications}\]
+
+The above calculations show that $\texttt{A(BC)}$ is more efficient than $\texttt{(AB)C}$ while maintaining the resulting $3 \times 2$ matrix.
+
+\end{document}
