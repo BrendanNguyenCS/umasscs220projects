@@ -1,0 +1,130 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{titling} % For positioning of title preamble
+\usepackage[margin=1in]{geometry} % For margin width setting
+\usepackage{comment} % For block commenting
+\usepackage{enumitem} % For list styling
+\usepackage{float} % For table positioning
+% For math equation formatting
+\usepackage{amsmath, amssymb, relsize}
+% For automatic paragraph spacing/formatting
+\usepackage{parskip}
+% For side by side figures
+\usepackage{multicol}
+\usepackage{makecell}
+
+% Move title area to the top of the page
+\setlength{\droptitle}{-4em}
+\addtolength{\droptitle}{-4pt} 
+% \setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1.25}
+% Disable paragraph indenting
+\setlength{\parindent}{0pt}
+
+\title{CS220 Discrete Math - Homework \#5}
+\author{Brendan Nguyen - \texttt{brendan.nguyen001@umb.edu}}
+\date{March 3, 2022}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question 1}
+
+The addition and multiplication tables for $Z_7$ are shown below. To fill the tables, we use the defined operations for addition and multiplication modulo $m$, $a +_m b = (a+b) \mathinner{\text{mod}} m$ and $a \cdot_m b = (a \cdot b) \mathinner{\text{mod}} m$ respectively.
+
+\begin{multicols}{2}
+    \begin{table}[H]
+        \begin{tabular}{c|c c c c c c c}
+             $+_7$ & 0 & 1 & 2 & 3 & 4 & 5 & 6\\
+             \hline
+             0 & 0 & 1 & 2 & 3 & 4 & 5 & 6\\
+             1 & 1 & 2 & 3 & 4 & 5 & 6 & 0\\
+             2 & 2 & 3 & 4 & 5 & 6 & 0 & 1\\
+             3 & 3 & 4 & 5 & 6 & 0 & 1 & 2\\
+             4 & 4 & 5 & 6 & 0 & 1 & 2 & 3\\
+             5 & 5 & 6 & 0 & 1 & 2 & 3 & 4\\
+             6 & 6 & 0 & 1 & 2 & 3 & 4 & 5\\
+        \end{tabular}
+    \end{table}
+    
+    \begin{table}[H]
+        \begin{tabular}{c|c c c c c c c}
+             $\cdot_7$ & 0 & 1 & 2 & 3 & 4 & 5 & 6\\
+             \hline
+             0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+             1 & 0 & 1 & 2 & 3 & 4 & 5 & 6\\
+             2 & 0 & 2 & 4 & 6 & 1 & 3 & 5\\
+             3 & 0 & 3 & 6 & 2 & 5 & 1 & 4\\
+             4 & 0 & 4 & 1 & 5 & 2 & 6 & 3\\
+             5 & 0 & 5 & 3 & 1 & 6 & 4 & 2\\
+             6 & 0 & 6 & 5 & 4 & 3 & 2 & 1\\
+        \end{tabular}
+    \end{table}
+\end{multicols}
+
+Examples of above calculations where $m=7$:
+\begin{flalign*}
+    &a=5, b=6: (5+6) \mathinner{\text{mod}} 7 = 11 \mathinner{\text{mod}} 7 = 4&\\
+    &a=6, b=4: (6 \cdot 4) \mathinner{\text{mod}} 7 = 24 \mathinner{\text{mod}} 7 = 24 \mathinner{\text{mod}} 21 = 3
+\end{flalign*}
+
+\section*{Question 2}
+The sum and product of $(\text{20CBA})_{16}$ and $(\text{A01})_{16}$ are shown below.
+
+\begin{multicols}{2}
+    \begin{table}[H]
+        \begin{tabular}[b]{l@{\:}r@{\,}r@{\,}r@{\,}r@{\,}r@{\,}r}
+            & & \thead{\smaller 1} & & & &\\
+            & 2 & 0 & C & B & A & $_{16}$\\
+            + & & & A & 0 & 1 & $_{16}$\\
+            \hline
+            & 2 & 1 & 6 & B & B & $_{16}$\\
+        \end{tabular}
+    \end{table}
+    
+    \begin{table}[H]
+        \begin{tabular}[b]{l@{\:}r@{\,}r@{\,}r@{\,}r@{\,}r@{\,}r@{\,}r@{\,}r@{\,}r}
+            & & & & & \thead{\smaller 7} & \thead{\smaller 7} & \thead{\smaller 6} & \\
+            & & & & 2 & 0 & C & B & A & $_{16}$\\
+            $\times$ & & & & & & A & 0 & 1 & $_{16}$\\
+            \hline
+            & & & & 2 & 0 & C & B & A & $_{16}$\\
+            & & & & & & & & 0 & \\
+            + & 1 & 4 & 7 & F & 4 & 4 & 0 & 0 & $_{16}$\\
+            \hline
+            & 1 & 4 & 8 & 1 & 5 & 0 & B & A & $_{16}$\\
+        \end{tabular}
+    \end{table}
+\end{multicols}
+
+The corresponding binary values can be used to double check the above. The sum $(\text{216BB})_{16}$ gets the correct binary value of $(\text{136,891})_{10}$ (or $134,330+2,561$). The product $(\text{148150BA})_{16}$ gets the correct binary value of $(\text{344,019,130})_{10}$ (or $134,330\times2,561$).
+
+\section*{Question 3}
+Just to establish a preconceived definition of a factorial. The given factorial $100! = 100 \times 99 \times 98 \times 97 \times \cdots \times 3 \times 2 \times 1$. In order to count the number of trailing zeros that exist in the result of $100!$, we should find situations (meaning combinations of factors) that could result in an additional trailing zero. We can infer that a trailing zero will be formed by multiplying a multiple of $5$ and a multiple of $2$ together.
+
+First, we can count the multiples of $5$. These consist of $5, 10, 15, 20, 25,\ldots, 95, 100$, 20 multiples of $5$. However, the four multiples of 25 ($25, 50, 75, 100)$ need to be counted twice since $25=5^2$ (meaning each multiple of $25$ is essentially 2 multiples of $5$). The final count of multiples of $5$ is 24.
+
+Next, we can count the multiples of 2. Getting the initial set of multiples of $2$, we get a total of 50 multiples. As we did before, we also need to take into account multiples of $4$, $8$, etc. We can reasonably infer that the total multiples of $2$ will far exceed the initial 50.
+
+Finally, because we have only 24 multiples of $5$ and far more multiples of $2$, we can say that there will only be 24 trailing zeros in $100!$ because we can only have that number of unique pairs of multiples of $5$ and $2$.
+
+\section*{Question 4}
+Listing the factors of 6 and 28 (not including the numbers themselves) and adding them together will show that they are perfect.
+
+6: $1+2+3=\textbf{6}$
+
+28: $1+2+4+7+14=\textbf{28}$
+
+\section*{Question 5}
+We know that $a$ is congruent to $b \mathinner{\text{mod}} m$ if $m$ divides $a-b$. We also know that $a$ divides $b$ is there's an integer $x$ that satisfies $b = ax$. We can combine these two factors to say that there is an integer $x$ such that $a - b = mx$ or $a = mx + b$. Next, we can define constants that will help us find the gcds: $A = \gcd(a, m)$ and $B = \gcd(b,m)$. Listing the gcds of two integers gets us: $A|a$, $A|m$, $B|b$, and $B|m$.
+
+Since $a = mx + b$, $A|a$ and $A|m$ implies $A|b$. Similarly, $B|b$ and $B|m$ implies $B|a$. Then we can state that if an integer divides two integers, then the integer also divides their gcd.
+\begin{align*}
+    A|\gcd(b,m)\\
+    B|\gcd(a,m)
+\end{align*}
+
+Since $A = \gcd(a, m)$ and $B = \gcd(b,m)$, we can substitute into the two statements above which results in: $A|B$ and $B|A$. If $A|B$ and $B|A$ is true, then you can imply that $A = B$ and therefore, $\gcd(a,m) = \gcd(b,m)$.
+
+\end{document}
