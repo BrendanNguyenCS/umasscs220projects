@@ -1,0 +1,99 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{titling} % For positioning of title preamble
+\usepackage[margin=1in]{geometry} % For margin width setting
+\usepackage{comment} % For block commenting
+\usepackage{enumitem} % For list styling
+\usepackage{float} % For table positioning
+% For math equation formatting
+\usepackage{amsmath, amssymb, relsize}
+% For automatic paragraph spacing/formatting
+\usepackage{parskip}
+% For side by side figures
+\usepackage{multicol}
+\usepackage{makecell}
+% For colors
+\usepackage[dvipsnames]{xcolor}
+% For code
+\usepackage{listings}
+\lstdefinestyle{mystyle}{
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+
+% Move title area to the top of the page
+\setlength{\droptitle}{-4em}
+\addtolength{\droptitle}{-4pt} 
+% \setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1.25}
+% Disable paragraph indenting
+\setlength{\parindent}{0pt}
+% Change default font to sans font
+\renewcommand{\familydefault}{\sfdefault}
+
+\title{CS220 Discrete Math - Homework \#8}
+\author{Brendan Nguyen - \texttt{brendan.nguyen001@umb.edu}}
+\date{April 7, 2022}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question 1}
+First, we consider the properties of the compound proposition of $n$ variables. Each variable in the proposition has 2 options, true or false. Therefore, we can use the product rule to say that the amount of options for row will equal two times itself for the number of variables in the proposition $n$, which is $2^n$.
+
+Then, we need to consider that each row will also have 2 options, true or false. Applying the product rule again, we see that the amount of options for truth tables will equal two times itself $2^n$ times, which is $2^{2^n}$.
+
+\section*{Question 2}
+There are 5 different congruence options for $a$ and 5 different congruence options for $b$. This means that there are 25 classes for the congruence of the pair $(a, b)$. Then, we can use pigeonhole principle to state that:
+
+\[\Big\lceil\frac{n}{25}\Big\rceil = 2\]
+
+Therefore, we can say that \boxed{\mathbf{26}} will guarantee that we have a repeating classes for the congruence of the pair $(a, b)$.
+
+\section*{Question 3}
+We can use the pigeonhole principle to prove or disprove. First we can test it by saying that if this hypothesis is not true, then:
+
+\begin{gather*}
+    \text{box 1 contains } \leq n_1 - 1\ \text{objects}\\
+    \text{box 2 contains } \leq n_2 - 1\ \text{objects}\\
+    \vdots\hspace{75pt}\vdots\\
+    \text{box $t$ contains } \leq n_t - 1\ \text{objects}\\
+\end{gather*}
+
+Using the equations above, we can say that all the boxes would contain $\leq (n_1 + n_2 + \cdots + n_t) - t$ objects, which would contradict the original hypothesis.
+
+\section*{Question 4}
+Given the letters ABCDEFGH,
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\begin{enumerate}
+    \item The set of permutations of the letters ABCDEFGH that contain the string ED is the same as the set of permutations of the 7-element set \{A, B, C, ED, F, G, H\}. Therefore, there are 7!, or 5040, permutations.
+    \item Similarly, the set of permutations that contain CDE is the set of permutations of the 6-element set \{A, B, CDE, F, G, H\}. Therefore, there are 6!, or 720, permutations.
+    \item The set of permutations that contains the strings BA and FGH is the set of permutations of the 5-element set \{BA, C, D, E, FGH\}. Therefore, there are 5!, or 120, permutations.
+    \item The set of permutations that contains the strings AB, DE, and GH is the set of permutations of the 5-element set \{AB, C, DE, F, GH\}. Therefore, there are also 5!, or 120, permutations of this set.
+    \item The only way this is possible is if you have a set that contains CABED. This set of permutations would have elements with \{CABED, F, G, H\}. Therefore, there are 4!, or 24, permutations.
+    \item It is impossible for a set of permutations to contain both BCA and ABF.
+\end{enumerate}
+
+\section*{Question 5}
+The combinations that would satisfy the condition that there must be more women than men in the six person committee is as follows: 4 women and 2 men, 5 women and 1 man, or 6 women.
+
+\begin{flalign*}
+\binom{15}{4} \cdot \binom{10}{2} &= \frac{15!}{4! \cdot 11!} \cdot \frac{10!}{2! \cdot 8!} = 1365 \cdot 45 = 61425\\
+\binom{15}{5} \cdot \binom{10}{1} &= \frac{15!}{5! \cdot 10!} \cdot \frac{10!}{1! \cdot 9!} = 3003 \cdot 10 = 30030\\
+\binom{15}{6} &= \frac{15!}{6! \cdot 9!} = 5005\\
+\binom{15}{4} \cdot \binom{10}{2} + \binom{15}{5} \cdot \binom{10}{1} + \binom{15}{6} &= 61425 + 30030 + 5005 = \boxed{\mathbf{96460}}\\
+\end{flalign*}
+
+\end{document}

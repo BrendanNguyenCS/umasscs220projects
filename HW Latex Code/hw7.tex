@@ -38,6 +38,8 @@
 \renewcommand{\arraystretch}{1.25}
 % Disable paragraph indenting
 \setlength{\parindent}{0pt}
+% Change default font to sans font
+\renewcommand{\familydefault}{\sfdefault}
 
 \title{CS220 Discrete Math - Homework \#7}
 \author{Brendan Nguyen - \texttt{brendan.nguyen001@umb.edu}}
@@ -116,7 +118,7 @@ The set of all bit strings that are palindromes can be defined as:
 We can use the given equality $a^{2^{n+1}} = (a^{2^{n}})^2$ to write the recursive algorithm below:
 
 \begin{lstlisting}[mathescape=true]
-function pow(x : a real number, n : an positive integer) {
+function pow(x : a real number, n : a positive integer) {
     if (n = 1) {
         return $x^2$
     }

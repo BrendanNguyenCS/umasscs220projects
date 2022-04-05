@@ -7,6 +7,8 @@
 \usepackage{float} % For table positioning
 % For math equation formatting
 \usepackage{amsmath, amssymb, relsize}
+\newcommand{\PMod}[1]{\ (\mathrm{mod}\ #1)}
+\newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}
 % For automatic paragraph spacing/formatting
 \usepackage{parskip}
 % For side by side figures
@@ -20,6 +22,8 @@
 \renewcommand{\arraystretch}{1.25}
 % Disable paragraph indenting
 \setlength{\parindent}{0pt}
+% Change default font to sans font
+\renewcommand{\familydefault}{\sfdefault}
 
 \title{CS220 Discrete Math - Homework \#5}
 \author{Brendan Nguyen - \texttt{brendan.nguyen001@umb.edu}}
@@ -31,7 +35,7 @@
 
 \section*{Question 1}
 
-The addition and multiplication tables for $Z_7$ are shown below. To fill the tables, we use the defined operations for addition and multiplication modulo $m$, $a +_m b = (a+b) \mathinner{\text{mod}} m$ and $a \cdot_m b = (a \cdot b) \mathinner{\text{mod}} m$ respectively.
+The addition and multiplication tables for $Z_7$ are shown below. To fill the tables, we use the defined operations for addition and multiplication modulo $m$, $a +_m b = (a+b) \Mod{m}$ and $a \cdot_m b = (a \cdot b) \Mod{m} m$ respectively.
 
 \begin{multicols}{2}
     \begin{table}[H]
@@ -65,8 +69,8 @@ The addition and multiplication tables for $Z_7$ are shown below. To fill the ta
 
 Examples of above calculations where $m=7$:
 \begin{flalign*}
-    &a=5, b=6: (5+6) \mathinner{\text{mod}} 7 = 11 \mathinner{\text{mod}} 7 = 4&\\
-    &a=6, b=4: (6 \cdot 4) \mathinner{\text{mod}} 7 = 24 \mathinner{\text{mod}} 7 = 24 \mathinner{\text{mod}} 21 = 3
+    &a=5, b=6: (5+6) \Mod{7} = 11 \Mod{7} = 4&\\
+    &a=6, b=4: (6 \cdot 4) \Mod{7} = 24 \Mod{7} = 24 \Mod{21} = 3
 \end{flalign*}
 
 \section*{Question 2}

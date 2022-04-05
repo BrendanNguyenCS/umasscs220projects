@@ -10,6 +10,8 @@
 \usepackage{array}
 \newcounter{rowno}
 \setcounter{rowno}{0}
+% Change default font to sans font
+\renewcommand{\familydefault}{\sfdefault}
 
 % Move title area to the top of the page
 \setlength{\droptitle}{-4em}
@@ -77,7 +79,7 @@ Let the conditional statement $S$ be $(p \to q) \to q$, then we can use a truth 
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|c|c|c|c|}
+    \begin{tabular}{|c c|c|c|}
         \hline
          $p$ & $q$ & $p \to q$ & $(p \to q) \to q$  \\\hline
          T & T & T & T\\\hline
