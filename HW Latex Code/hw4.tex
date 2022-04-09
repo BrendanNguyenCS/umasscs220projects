@@ -58,7 +58,7 @@ Afterwards, I tested $c=2$ and $k=3$. Plugging in $n=4$, I got $f(4) \leq c(g(4)
 \section*{Question 2}
 According to the definition of big-$\textit{O}$ notation, we can say that:
 
-\[1^k + 2^k + \cdots + n^k < n^k + n^k + \cdots + n^k = n \times n^k = n^{k+1}\]
+\[1^k + 2^k + \cdots + n^k < n^k + n^k + \cdots + n^k = n \cdot n^k = n^{k+1}\]
 
 Since the sum $(n^k + n^k + \cdots + n^k)$ is greater than the sum $(1^k + 2^k + \cdots + n^k)$ and is clearly $O(n^{k+1})$ since the sum is exactly $n^{k+1}$. Therefore the smaller sum of $(1^k + 2^k + \cdots + n^k)$ is also $O(n^{k+1})$.
 
@@ -126,8 +126,8 @@ We can find which method is more efficient by analyzing the matrix multiplicatio
 
 For the matrices $A$, $B$, and $C$ with dimensions $3 \times 9$, $9 \times 4$, and $4 \times 2$, respectively:
 
-\[\texttt{(AB)C} = (3 \times 9 \times 4) + (3 \times 4 \times 2) = 132 \ \text{integer multiplications}\]
-\[\texttt{A(BC)} = (9 \times 4 \times 2) + (3 \times 9 \times 2) = 126 \ \text{integer multiplications}\]
+\[\texttt{(AB)C} = (3 \cdot 9 \cdot 4) + (3 \cdot 4 \cdot 2) = 132 \ \text{integer multiplications}\]
+\[\texttt{A(BC)} = (9 \cdot 4 \cdot 2) + (3 \cdot 9 \cdot 2) = 126 \ \text{integer multiplications}\]
 
 The above calculations show that $\texttt{A(BC)}$ is more efficient than $\texttt{(AB)C}$ while maintaining the resulting $3 \times 2$ matrix.
 

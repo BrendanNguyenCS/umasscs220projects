@@ -1,0 +1,104 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{titling} % For positioning of title preamble
+\usepackage[margin=1in]{geometry} % For margin width setting
+\usepackage{comment} % For block commenting
+\usepackage{enumitem} % For list styling
+\usepackage{float} % For table positioning
+% For math equation formatting
+\usepackage{amsmath, amssymb, relsize}
+% For automatic paragraph spacing/formatting
+\usepackage{parskip}
+% For side by side figures
+\usepackage{multicol}
+\usepackage{makecell}
+% For colors
+\usepackage[dvipsnames]{xcolor}
+% For code
+\usepackage{listings}
+\lstdefinestyle{mystyle}{
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+
+% Move title area to the top of the page
+\setlength{\droptitle}{-4em}
+\addtolength{\droptitle}{-4pt} 
+% \setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1.25}
+% Disable paragraph indenting
+\setlength{\parindent}{0pt}
+% Change default font to sans font
+\renewcommand{\familydefault}{\sfdefault}
+
+\title{CS220 Discrete Math - Homework \#9}
+\author{Brendan Nguyen - \texttt{brendan.nguyen001@umb.edu}}
+\date{April 14, 2022}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question 1}
+
+
+\section*{Question 2}
+Using a combinatorial argument, we will assume that there are two groups A and B, each of which has $n$ members in them. If we select 2 members in total, we can select either:
+
+\begin{itemize}
+    \item One from each group: $\binom{n}{1} \cdot \binom{n}{1}$
+    \item Two from either group: $\binom{n}{2} + \binom{n}{2}$
+\end{itemize}
+
+Therefore, we can say that:
+
+\begin{flalign*}
+    \binom{2n}{2} &= \binom{n}{1} \cdot \binom{n}{1} + \binom{n}{2} + \binom{n}{2}\\
+    &= n \cdot n + 2\binom{n}{2}\\
+    &= 2\binom{n}{2} + n^2\\
+\end{flalign*}
+
+\section*{Question 3}
+If a standard deck of 52 cards is a dealt to four players, each player will get 13, or $\frac{52}{4}$, cards. Then we can use the theorem for the number of permutations with distinguishable objects which allow us to compute the number of permutations of $n$ objects in $k$ different categories given by:
+
+\[\frac{n!}{n_1!n_2! \cdots n_k!}\]
+
+In this example, we know that $n = 52$, $k = 4$, and $n_1, n_2, n_3, n_4 = 13$. Applying these values to the previously mentioned theorem, we get:
+
+\[\frac{52!}{13! \cdot 13! \cdot 13! \cdot 13!} = \frac{52!}{(13!)^4} \approx 5.4 \cdot 10^{28} \text{ permutations}\]
+
+\section*{Question 4}
+
+
+\section*{Question 5}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+
+\begin{enumerate}
+    \item In order to find the number of ways to place 5 distinguishable balls into 7 distinguishable boxes, we have to find the number of permutations since order matters, which is given by: 
+    
+    \[P(n, k) = \frac{n!}{(n-k)!}\]
+    
+    For our problem, $n$ is the number of distinguishable boxes, 7, and $k$ is the number of distinguishable balls, 5.
+    
+    \[P(7, 5) = \frac{7!}{(7-5)!} = \frac{7!}{2!} = 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 = 2520 \text{ permutations}\]
+    
+    \item In order to find the number of ways to place 5 indistinguishable balls into 7 distinguishable boxes, we have to find the number of combinations since order doesn't matter, which is given by:
+    
+    \[C(n, k) = \binom{n}{k} = \frac{n!}{k!(n-k)!}\]
+    
+    As with the previous part, $n$ is the number of distinguishable boxes, 7, but $k$ is the number of indistinguishable balls, 5.
+    
+    \[\binom{7}{5} = \frac{7!}{5!(7-5)!} = \frac{7!}{5!2!} = 21 \text{ combinations}\]
+\end{enumerate}
+
+\end{document}
