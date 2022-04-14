@@ -50,9 +50,9 @@
 \maketitle
 
 \section*{Question 1}
-First, we consider the properties of the compound proposition of $n$ variables. Each variable in the proposition has 2 options, true or false. Therefore, we can use the product rule to say that the amount of options for row will equal two times itself for the number of variables in the proposition $n$, which is $2^n$.
+First, we consider the properties of the compound proposition of $n$ variables. Each variable in the proposition has 2 options, $\texttt{true}$ or $\texttt{false}$. Therefore, we can use the product rule to say that the amount of options for row will equal two times itself for the number of variables in the proposition $n$, which is $2^n$.
 
-Then, we need to consider that each row will also have 2 options, true or false. Applying the product rule again, we see that the amount of options for truth tables will equal two times itself $2^n$ times, which is $2^{2^n}$.
+Then, we need to consider that each row will also have 2 options, $\texttt{true}$ or $\texttt{false}$. Applying the product rule again, we see that the amount of options for truth tables will equal two times itself $2^n$ times, which is $2^{2^n}$.
 
 \section*{Question 2}
 There are 5 different congruence options for $a$ and 5 different congruence options for $b$. This means that there are 25 classes for the congruence of the pair $(a, b)$. Then, we can use pigeonhole principle to state that:
@@ -62,7 +62,9 @@ There are 5 different congruence options for $a$ and 5 different congruence opti
 Therefore, we can say that \boxed{\mathbf{26}} will guarantee that we have a repeating classes for the congruence of the pair $(a, b)$.
 
 \section*{Question 3}
-We can use the pigeonhole principle to prove or disprove. First we can test it by saying that if this hypothesis is not true, then:
+We can use the pigeonhole principle to prove or disprove the statement: ``Let $n_1,n_2,\ldots,n_t$ be positive integers. If $n_1 + n_2 + \cdots + n_t - t + 1$ objects are placed into $t$ boxes, then for some $i$, $i = 1,2,\ldots,t$, the $i$-th box contains at least $n_i$ objects."
+
+First we can test it by saying that if this hypothesis is not true, then:
 
 \begin{gather*}
     \text{box 1 contains } \leq n_1 - 1\ \text{objects}\\
