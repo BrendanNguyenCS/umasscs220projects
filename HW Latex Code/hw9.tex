@@ -90,9 +90,13 @@ In this example, we know that $n = 52$, $k = 4$, and $n_1, n_2, n_3, n_4 = 13$. 
 \section*{Question 4}
 We know that 7 books will not be selected (since we are choosing 5 books out of 12 total). We then create a model that represents the order of selected book using the bars and stars analogy that is hinted in the problem statement. This model would be:
 
-\[|| \star || \star || \star || \star || \star || \star || \star ||\]
+\[\underline{\hspace{0.25cm}} \star \underline{\hspace{0.25cm}} \star \underline{\hspace{0.25cm}} \star \underline{\hspace{0.25cm}} \star \underline{\hspace{0.25cm}} \star \underline{\hspace{0.25cm}} \star \underline{\hspace{0.25cm}} \star \underline{\hspace{0.25cm}}\]
 
-The above model suggests that we have 8 total options to pick a book. Out of those 8 possible options, we need to choose five. The total possible combinations is:
+The above model suggests that we have 8 total options to place a book (as denoted by the $\underline{\hspace{0.25cm}}$) around the 7 books that won't be selected already in place (as denoted $\star$). Out of those 8 possible options, we need to place five (as denoted by $||$ below) as the above model guarantees that the none of the placed books will be adjacent to another one. One example is:
+
+\[|| \star || \star || \star \underline{\hspace{0.25cm}} \star || \star \underline{\hspace{0.25cm}} \star \underline{\hspace{0.25cm}} \star ||\]
+
+The total possible combinations is:
 
 \[\binom{8}{5} = \frac{8!}{5!(8-5)!} = \frac{8!}{5! \cdot 3!} = 56 \text{ ways}\]
 
@@ -102,15 +106,15 @@ The above model suggests that we have 8 total options to pick a book. Out of tho
 \begin{enumerate}
     \item In order to find the number of ways to place 5 distinguishable balls into 7 distinguishable boxes, we have to find the number of permutations since order matters, which is given by: 
     
-    \[P(n, k) = \frac{n!}{(n-k)!}\]
+    \[_{n}P_{k} = \frac{n!}{(n-k)!}\]
     
     For our problem, $n$ is the number of distinguishable boxes, 7, and $k$ is the number of distinguishable balls, 5.
     
-    \[P(7, 5) = \frac{7!}{(7-5)!} = \frac{7!}{2!} = 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 = 2520 \text{ permutations}\]
+    \[_{7}P_{5} = \frac{7!}{(7-5)!} = \frac{7!}{2!} = 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 = 2520 \text{ permutations}\]
     
     \item In order to find the number of ways to place 5 indistinguishable balls into 7 distinguishable boxes, we have to find the number of combinations since order doesn't matter, which is given by:
     
-    \[C(n, k) = \binom{n}{k} = \frac{n!}{k!(n-k)!}\]
+    \[_{n}C_{k} = \binom{n}{k} = \frac{n!}{k!(n-k)!}\]
     
     As with the previous part, $n$ is the number of distinguishable boxes, 7, but $k$ is the number of indistinguishable balls, 5.
     
