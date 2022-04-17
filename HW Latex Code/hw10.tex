@@ -51,18 +51,15 @@
 
 \section*{Question 1}
 To get the probability that a five-card poker hand contains a royal flush (a 10, jack, queen, king, and ace of the same suit), we first consider the amount of total possible five-card poker hands which is:
-
 \[\binom{52}{5} = \frac{52!}{5!(52-5)!} = \frac{52!}{5! \cdot 47!} = 2,598,960 \text{ different poker hands}\]
 
 There are only four possible poker hands that would contain a royal flush, one of each suit. This means that the probability is:
-
 \[P(\text{royal flush hand}) = \frac{4}{\binom{52}{5}} = \frac{4}{2,598,960} \approx 1.539 \cdot 10^{-6} \equiv 0.00154\%\]
 
 \section*{Question 2}
 For the Monty Hall puzzle presented in the problem, we consider four doors. You have a $\frac{1}{4}$, or 25\%, chance of selecting the right door without changing doors. 
 
 If we were to change doors, we would have to consider the remaining probability, $\frac{3}{4}$ or 75\%. However, we also have to consider the fact that the host also uncovers one of the other losing doors before you change doors, meaning that the remaining $\frac{3}{4}$ is split between the two remaining doors. In mathematical form, we can represent this by denoting $D_1, D_2, D_3, D_4$ as the doors in the puzzle. We can imagine that we chose $D_1$ as an incorrect door and any one of the others doors is revealed to be an incorrect door as well.
-
 \[P(\text{right door after changing}) = \frac{P(D_2) + P(D_3) + P(D_4)}{2} = \frac{\frac{1}{4} + \frac{1}{4} + \frac{1}{4}}{2} = \frac{\frac{3}{4}}{2} = \frac{3}{8}\]
 
 \section*{Question 3}
@@ -83,10 +80,41 @@ There are 26!, or about $4.03 \cdot 10^{26}$, total permutations of the 26 lower
     
     \[P(\text{first 13 in order)} = \frac{_{13}P_{13}}{26!} = \frac{13!}{26!} = \frac{1}{13!} = 1.606 \cdot 10^{-10}\]
     
-    \item 
+    \item To find the probability that the randomly set of lowercase letters contains a and z next to each other, we can simplify what we are permuting on. In other words, we can think of the set as permuting 25 objects, the letters b through y and ``az". In combination with the 2 permutations of ``az", we then find that there are 25! permutations of the 25 objects set described previously. Thus the probability is:
+    
+    \[P(\text{a and z are adjacent}) = \frac{2 \cdot 25!}{26!} = \frac{1}{13} \approx 0.077 \equiv 7.7\%\]
+    
+    \item The probability that the randomly permuted set doesn't contain a and z adjacent to one another is just to opposite of the answer in part (c):
+    \[P(\text{a and z are not adjacent}) = 1 - P(\text{a and z are adjacent}) = 1 - \frac{1}{13} = \frac{12}{13} \approx 0.923 \equiv 92.3\%\]
 \end{enumerate}
 
 \section*{Question 5}
+We know that events $E$ and $F$ are independent if and only if $p(E \cap F) = p(E)p(F)$ from the class notes. We can list all of the possible bit strings of length three.
 
+\setlength{\tabcolsep}{16pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{table}[H]
+    \begin{tabular}{c c c}
+         000 & 011 & 110 \\
+         001 & 100 & 111 \\
+         010 & 101 &  \\
+    \end{tabular}
+\end{table}
+From the list above, we can see that half of the bit strings have an odd number of 1's:
+
+\[E: \{001, 010, 100, 111\}\]
+
+and half of them starts with 1:
+
+\[F: \{100, 101, 110, 111\}\]
+
+Therefore, $p(E) = \frac{1}{2}$ and $p(F) = \frac{1}{2}$. In addition, we can observe that two of the bit strings listed previously fits the criteria of when events $E$ and $F$ occur at the same time:
+
+\[E \cap F : \{100, 111\}\]
+
+Therefore, $p(E \cap F) = \frac{1}{4}$. Finally, we can see if the conditions for independent events is true in this situation. We observe that:
+
+\[p(E)p(F) = \left(\frac{1}{2}\right)\left(\frac{1}{2}\right) = \frac{1}{4} = p(E \cap F)\]
+Therefore, $E$ and $F$ are independent.
 
 \end{document}
