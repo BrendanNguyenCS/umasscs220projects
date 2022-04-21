@@ -40,6 +40,8 @@
 \setlength{\parindent}{0pt}
 % Change default font to sans font
 \renewcommand{\familydefault}{\sfdefault}
+% Change default vertical spacing for align environments
+\setlength{\jot}{7pt}
 
 \title{CS220 Discrete Math - Homework \#7}
 \author{Brendan Nguyen - \texttt{brendan.nguyen001@umb.edu}}
@@ -57,11 +59,10 @@ $0^3 - 0 = 0$ $\&$ 6 divides 0 $\therefore$ $F(n)$ is true when $n = 0$
 
 \textbf{Inductive step: } $F(n) \to F(n + 1)$\\
 We can assume that $F(n)$ is true for some positive integer $n$. We can calculate $F(n + 1)$ as shown below:
-
 \begin{align*}
     (n + 1)^3 - (n + 1) &= n^3 + 3n^2 + 3n + 1 - n - 1\\
     &= (n^3 - n) + (3n^2 + 3n)\\
-    &= (n^3 - n) + 3n(n+1)\\
+    &= (n^3 - n) + 3n(n+1)
 \end{align*}
 
 Next, we can use features of numbers to help with our proof. We know that exactly one of any two consecutive integers will be even. Therefore, we can say that 2 divides $n(n + 1)$ and $3n(n + 1)$. We can also say that both 3 and 6 divide $3n(n+1)$. 
@@ -74,10 +75,9 @@ With everything in mind, we can say that $F(n) \to F(n + 1)$.
 We can mathematical induction to prove that $AB^n = B^nA$ for all nonnegative integer $n$ given that $AB = BA$. 
 
 Firstly, we can denote a function $F(n)$ that is defined by the given statement above. Then we can prove that the function is true for $n = 1$.
-
 \begin{align*}
     AB^1 &= AB\\
-    B^1A &= BA\\
+    B^1A &= BA
 \end{align*}
 
 The statements above signify each side of the inequality. Because both sides are equal to each other, we can say that $F(n)$ is true for $n = 1$. Next, we assume that $F(x)$ is true and then prove that $F(n + 1)$ is true. In other words, if $AB = BA$, then $AB^x = B^xA$. By proving if $F(x + 1)$ is true, we will find out if $AB^{x + 1} = B^{x + 1}A$ given that $AB = BA$.
@@ -89,7 +89,7 @@ The statements above signify each side of the inequality. Because both sides are
     &= B^x(AB)\\
     &= B^x(BA)\\
     &= (B^xB)A\\
-    &= B^{x + 1}A\\
+    &= B^{x + 1}A
 \end{align*}
 
 Similar to before, we can say that $F(x + 1)$ is true when $F(x)$ is true. Finally, by mathematical induction, we can say that $F(n)$ is true for all nonnegative integers $n$.
