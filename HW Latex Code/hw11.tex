@@ -1,4 +1,5 @@
 \documentclass[11pt]{article}
+\usepackage{nopageno} % For removing page numbers
 \usepackage[utf8]{inputenc}
 \usepackage{titling} % For positioning of title preamble
 \usepackage[margin=1in]{geometry} % For margin width setting
@@ -52,7 +53,20 @@
 \maketitle
 
 \section*{Question 1}
+Given that $p(E) = \frac{2}{3}$, $p(F) = \frac{3}{4}$, and $p(F|E) = \frac{5}{8}$, we can solve for $p(E|F)$ by calculating the union of $E$ and $F$.
+\begin{flalign*}
+p(F|E) &= \frac{p(E \cap F)}{p(E)}\\
+p(E \cap F) &= p(F|E)p(E)\\
+&= \left(\frac{5}{8}\right)\left(\frac{2}{3}\right)\\
+&= \frac{5}{12}
+\end{flalign*}
 
+Finally, all we have to do is solve for $p(E|F)$ similarly to how to solved the above.
+\begin{flalign*}
+p(E|F) &= \frac{p(E \cap F)}{p(F)}\\
+&= \left(\frac{5}{12}\right)\left(\frac{4}{3}\right)\\
+&= \frac{5}{9}
+\end{flalign*}
 
 \section*{Question 2}
 Given that $E$, $F_1$, $F_2$, and $F_3$ are events from a sample space $S$ and that $F_1$, $F_2$, and $F_3$ are pairwise disjoint with their union $S$, we can use the Generalized Bayes' Theorem to find $p(F_2|E)$. The theorem is given by:
@@ -68,7 +82,7 @@ Finally, we just need to insert all of the values of the equation. We know that:
 \begin{flalign*}
 p(F_2|E) &= \frac{p(E|F_2)p(F_2)}{p(E|F_1)p(F_1) + p(E|F_2)p(F_2) + p(E|F_3)p(F_3)}\\
 &= \frac{\left(\frac{3}{8}\right)\left(\frac{1}{2}\right)}{\left(\frac{2}{7}\right)\left(\frac{1}{6}\right) + \left(\frac{3}{8}\right)\left(\frac{1}{2}\right) + \left(\frac{1}{2}\right)\left(\frac{1}{3}\right)}\\
-&= \frac{\frac{3}{16}}{\frac{1}{21} + \frac{3}{16} + \frac{1}{6}}  = \frac{\frac{3}{16}}{\frac{79}{336} + \frac{56}{336}}\\
+&= \frac{\frac{3}{16}}{\frac{1}{21} + \frac{3}{16} + \frac{1}{6}}\\
 &= \frac{\frac{3}{16}}{\frac{45}{112}} = \left(\frac{3}{16}\right)\left(\frac{112}{45}\right)\\
 &= \frac{7}{15}
 \end{flalign*}
@@ -79,7 +93,6 @@ In order to compute the expected value of a \$1 lottery ticket, you need to comp
 \[P(\text{winning}) = \frac{1}{15,890,700} \approx 6.29 \cdot 10^{-8}\]
 
 From this, we also know that the probability of losing is $1- P(\text{winning})$, or 99\%. A person with a winning ticket would have a net gain of \$9,999,999 but a person with a losing ticket would have a net loss of \$1. Therefore, the expected value $E(t)$ for an imaginary function $f(t)$ which relates ticket to winnings can be calculated as:
-
 \begin{flalign*}
 E(t) &= f(\text{winning})P(\text{winning}) + f(\text{losing})P(\text{losing})\\
 &= 9,999,999 \cdot P(\text{winning}) - 1 \cdot P(\text{losing})\\
@@ -102,6 +115,14 @@ Where $n$ is the number of trials and $p$ is the probability of getting a succes
 \[\sigma^2 = np(1-p) = (10)\left(\frac{1}{6}\right)\left(1- \frac{1}{6}\right) = (10)\left(\frac{1}{6}\right)\left(\frac{5}{6}\right) = \frac{25}{18} \approx 1.39\]
 
 \section*{Question 5}
+Chebyshev's Inequality tells us that:
 
+\[p(\left|X(s) - E(X)\right| \geq r) \leq \frac{V(X)}{r^2}\]
+
+In our problem, we will be finding the upper bound on the probability that the deviation of the coin flip is greater than $\sqrt{n}$. We can treat this problem as a Bernoulli experiment where the probability of success (getting a head) is $\frac{3}{5}$, or 0.6. 
+
+By Theorem 4.2, the expected value for mutually independent Bernoulli trials is $np$, which is $E(X) = n \cdot \frac{3}{5} = \frac{3n}{5}$ in this case. Similarly, the variance of mutually independent Bernoulli trials is $np(1-p)$, or $V(X) = n \cdot \frac{3}{5} \cdot \frac{2}{5} = \frac{6n}{25}$. Finally, we can plug in all these values in addition to $r = \sqrt{n}$:
+
+\[p\left(\left|X(s) - \frac{3n}{5}\right| \geq \sqrt{n} \right) \leq \frac{\frac{6n}{25}}{{(\sqrt{n})}^2} = \frac{6}{25}\]
 
 \end{document}
