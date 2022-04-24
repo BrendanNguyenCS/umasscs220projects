@@ -1,0 +1,245 @@
+\documentclass[11pt]{article}
+\usepackage{nopageno} % For removing page numbers
+\usepackage[utf8]{inputenc}
+\usepackage{color, colortbl} % For table coloring
+\usepackage{titling} % For positioning of title preamble
+\usepackage[margin=1in]{geometry} % For margin width setting
+\usepackage{comment} % For block commenting
+\usepackage{float} % For table positioning
+% For math equation formatting
+\usepackage{amsmath, amssymb, relsize}
+\newcommand{\PMod}[1]{\ (\mathrm{mod}\ #1)}
+\newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}\usepackage{parskip} % For automatic paragraph spacing/formatting
+\usepackage{relsize} % For increased math mode font sizing
+% For code blocks
+\usepackage{listings}
+\lstdefinestyle{mystyle}{
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+% For side by side figures
+\usepackage{multicol}
+\usepackage{makecell}
+
+% Move title area to the top of the page
+\setlength{\droptitle}{-4em}
+\addtolength{\droptitle}{-4pt} 
+\renewcommand{\arraystretch}{1.25}
+% Disable paragraph indenting
+\setlength{\parindent}{0pt}
+% Change default font to sans font
+\renewcommand{\familydefault}{\sfdefault}
+
+\title{UMass Boston CS220 Discrete Mathematics\\Homework Questions}
+\author{Professor: Ming Ouyang}
+\date{Spring 2022}
+
+\begin{document}
+
+\maketitle
+
+\section*{Homework 1 (due February 3, 2022)}
+
+\begin{enumerate}
+    \item If $p_1, p_2, \ldots, p_3$ are $n$ propositions, explain why
+    \[\mathlarger{\bigwedge_{i=1}^{n-1} \bigwedge_{j=i+1}^n (\neg p_i \vee \neg p_j)}\]
+    is true if and only if at most one of $p_1, p_2, \ldots, p_3$ is true.
+    \item Construct the truth table of this compound proposition $(p \wedge q) \vee \neg r$.
+    \item Is the assertion ``This statement is false" a proposition?
+    \item Determine whether $(\neg p \wedge (p \to q)) \to \neg q$ is a tautology.
+    \item Show that $(p \to q) \vee (p \to r)$ and $p \to (q \vee r)$ are logically equivalent.
+\end{enumerate}
+
+\section*{Homework 2 (due February 10, 2022)}
+
+\begin{enumerate}
+    \item Let $P(x)$ be the predicate ``$x$ has a cellphone." Let $Q(x)$ be a predicate ``$x$ can solve quadratic equations." Let $R(x)$ be the predicate ``$x$ wants to be rich."
+    \begin{enumerate}
+        \item Let the domain be all students in CS 220. Translate the following statements into logical expressions using predicates, quantifiers, and logical connectives.
+        \begin{enumerate}
+            \item Everyone in CS220 has a cellphone.
+            \item Somebody in CS220 can solve quadratic equations.
+            \item Somebody in CS220 does not want to be rich.
+        \end{enumerate}
+        \item Let the domain be all people. Let $C(x)$ be the predicate ``$x$ is in CS220." Translate the statements above again.
+    \end{enumerate}
+    \item Show that the argument with premises $(p \wedge t) \to (r \vee s)$, $q \to (u \wedge t)$, $u \to p$, $q$, and $\neg s$ and conclusion $r$ is valid by using rules of inference.
+    \item Let $S$ be the conditional statement ``If $S$ is true, then unicorns live." Show that if $S$ is a proposition, then ``Unicorns live" is true. Show that it follows that $S$ cannot be a proposition.
+    \item Use existential and universal quantifiers to express the statement ``No one has more than two grandmothers" using the predicate $G(x,y)$, which represents ``$x$ is the grandmother of $y$," and the predicate $x \neq y$ for ``$x$ is not equal to $y$."
+    \item Prove or disprove that if $A$, $B$, and $C$ are nonempty sets and $A \times B = A \times C$, then $B = C$.
+\end{enumerate}
+
+\section*{Homework 3 (due February 17, 2022)}
+
+\begin{enumerate}
+    \item Let $A$, $B$, and $C$ be sets. Show that $(A-B)-C = (A-C)-(B-C)$.
+    \item Let $f : R \to R$ and let $f(x) > 0$ for all $x \in R$.Show that $f(x)$ is strictly increasing if and only if the function $g(x) = \frac{1}{f(x)}$ is strictly decreasing.
+    \item A person deposits \$1,000 in an account that yields 9\% interest compounded annually.
+    \begin{enumerate}
+        \item Set up a recurrence relation for the amount in the account at the end of $n$ years.
+        \item Find an explicit formula for the amount in the account at the end of $n$ years.
+        \item How much money will the account contain after 100 years?
+    \end{enumerate}
+    \item Telescoping sum is the identity that $\sum^{n}_{i=1}(a_i - a_{i-1}) = a_n - a_0$. Use telescoping sum and the identity
+    \[\frac{1}{k(k+1)} = \frac{1}{k} - \frac{1}{k+1}\]
+    to compute
+    \[\sum_{i=1}^{n} \frac{1}{i(i+1)}.\]
+    \item Show that the set of functions from the positive integers to the set $\{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 \}$ is uncountable.
+\end{enumerate}
+
+\section*{Homework 4 (due February 24, 2022)}
+
+\begin{enumerate}
+    \item Use the definition of $f(n) = \mathrm{O}(g(n))$ to show that $2^n + 17 = \mathrm{O}(3^n)$.
+    \item Let $k$ be a positive integer. Show that $1^k + 2^k + \cdots + n^k = \mathrm{O}(n^{k+1})$.
+    \item Arrange the functions $(1.5)^n$, $n^{100}$, $(\log{n})^3$, $\sqrt{n}\log{n}$, $10^n$, $(n!)^2$, and $n^{99} + n^{98}$ in a list so that each function is big-$\mathrm{O}$ of the next function.
+    \item The following C code comes form page 50 and Exercise 2-9 of the C Programming Language by Kernighan and Ritchie, the second edition.
+    \begin{lstlisting}[language=C]
+int bitCount(unsigned x) {
+    int count;
+    
+    for (count = 0; x != 0; x &= (x - 1))
+        count++;
+    return count;
+}\end{lstlisting}
+    \begin{enumerate}
+        \item Explain why it counts the number of 1 bits in the unsigned integer \texttt{x}.
+        \item How many iterations will the for-loop be executed?
+    \end{enumerate}
+    \item To calculate the product of three integer matrices $ABC$, we can parenthesize the calculation as either $(AB)C$ or $A(BC)$. Which parenthesization uses fewer integer multiplications if $A$, $B$, and $C$ have dimensions $3 \times 9$, $9 \times 4$, and $4 \times 2$, respectively?
+\end{enumerate}
+
+\section*{Homework 5 (due March 3, 2022)}
+
+\begin{enumerate}
+    \item Write out the addition and multiplication tables for $Z_7$, where the sum $+_7$ and product $\cdot_7$ are \textit{modulo} 7.
+\begin{multicols}{2}
+    \begin{table}[H]
+        \begin{tabular}{c|c c c c c c c}
+             $+_7$ & 0 & 1 & 2 & 3 & 4 & 5 & 6\\
+             \hline
+             0 & & & & & & & \\
+             1 & & & & & & & \\
+             2 & & & & & & & \\
+             3 & & & & & & & \\
+             4 & & & & & & & \\
+             5 & & & & & & & \\
+             6 & & & & & & & 
+        \end{tabular}
+    \end{table}
+    
+    \begin{table}[H]
+        \begin{tabular}{c|c c c c c c c}
+             $\cdot_7$ & 0 & 1 & 2 & 3 & 4 & 5 & 6\\
+             \hline
+             0 & & & & & & & \\
+             1 & & & & & & & \\
+             2 & & & & & & & \\
+             3 & & & & & & & \\
+             4 & & & & & & & \\
+             5 & & & & & & & \\
+             6 & & & & & & &
+        \end{tabular}
+    \end{table}
+\end{multicols}
+    \item Find the sum and product of $(20\mathrm{CBA})_{16}$ and $(\mathrm{A}01)_{16}$. Express the answers in hexadecimal.
+    \item How many zeros are there at the end of 100!?
+    \item We call a positive integer perfect if it equals the sum of its positive divisors other than itself. Show that 6 and 28 are perfect.
+    \item Show that if $a$, $b$, and $m$ are integers such that $m \geq 2$ and $a \equiv b \PMod{m}$, then $\gcd(a,m) = \gcd(b,m)$.
+\end{enumerate}
+
+\section*{Homework 6 (due March 10, 2022)}
+
+\begin{enumerate}
+    \item Let $p_1, p_2, \ldots, p_n$ be the $n$ smallest prime numbers. Prove or disprove that $p_1p_2 \cdots p_n + 1$ is prime for every $n$.
+    \item Using B\'{e}zout's theorem, find an inverse of 34 modulo 89 --- that is, solve $34a \equiv 1 \PMod{89}$.
+    \item Use the value of $a$ from the previous question to solve $34x \equiv 77 \PMod{89}$.
+    \item Show that the positive integers less than 11, except 1 and 10, can be put in pairs such that each pair consists of integers that are inverses of each other modulo 11.
+    \item Use Fermat's little theorem to find $23^{1002} \Mod{41}$.
+\end{enumerate}
+
+\section*{Homework 7 (due March 24, 2022)}
+
+\begin{enumerate}
+    \item Prove that 6 divides $n^3 - n$ for all nonnegative integer $n$.
+    \item Let $A$ and $B$ be square matrices such that $AB = BA$. Prove that $AB^n = B^nA$ for all positive integer $n$.
+    \item Find the flaw with the following ``proof" that $A^n = 1$ for all nonnegative integers $n$, whenever $a$ is a nonzero real number.\\
+    Basis Step: $a^0 = 1$ is true by the definition of $a^0$.\\
+    Inductive Step: Assume that $a_j = 1$ for all nonnegative integers $j$ with $j \leq k$. Then note that
+    \[a^{k+1} = \frac{a^k \cdot a^k}{a^{k-1}} = \frac{1 \cdot 1}{1} = 1.\]
+    \item Give a recursive definition of the set of bit strings that are palindromes.
+    \item Design a recursive algorithm to find $a^{2^n}$, where $a$ is a real number and $n$ is a positive integer. Hint: Use the inequality $a^{2^{n+1}} = (a^{2^n})^2$.
+\end{enumerate}
+
+\section*{Homework 8 (due April 7, 2022)}
+
+\begin{enumerate}
+    \item Consider truth tables for a compound proposition of $n$ variables. How many rows do the truth tables have? How many different truth tables exist? Use the product rule of counting to justify your answers.
+    \item How many ordered pairs of integers $(a,b)$ are needed to guarantee that there are two ordered pairs $(a_1, b_1)$ and $(a_2, b_2)$ such that $a_1 \Mod{5} = a_2 \Mod{5}$ and $b_1 \Mod{5} = b_2 \Mod{5}$?
+    \item Let $n_1, n_2, \ldots, n_t$ be positive integers. Show that if $n_1 + n_2 + \cdots + n_t - t + 1$ objects are placed into $t$ boxes, then for some $i$, $i = 1, 2, \ldots, t$, the $i$-th box contains at least $n_i$ objects.
+    \item How many permutations of the letters ABCDEFGH contain
+    \begin{enumerate}
+        \item the string ED?
+        \item the string CDE?
+        \item the strings BA and FGH?
+        \item the strings AB, DE, and GH?
+        \item the strings CAB and BED?
+        \item the strings BCA and ABF?
+    \end{enumerate}
+    \item Suppose that a department contains 10 men and 15 women. How many ways are there to form a committee with six members if it must have more women than men?
+\end{enumerate}
+
+\section*{Homework 9 (due April 14, 2022)}
+
+\begin{enumerate}
+    \item Consider the expansion $\left(x + \frac{1}{x}\right)^{15}$. What are the coefficients of $x^7$ and $x^8$?
+    \item Use a combinatorial argument to show that, for a positive integer $n$,
+    \[\binom{2n}{2} = 2 \binom{n}{2} + n^2.\]
+    \item In bridge, the 52 cards of a standard deck are dealt to four players. How many different ways are there to deal bridge hands to four players?
+    \item  A shelf holds 12 books in a row. How many ways are there to choose five books so that no two adjacent books are chosen? Hint: Represent the books that are chosen by bars and the books not chosen by stars. Count the number of sequences of five bars and seven stars so that no two bars are adjacent.
+    \item We distribute 5 balls into 7 distinguishable boxes. Each box can hold at most 1 ball. How many ways can we distribute the balls if
+    \begin{enumerate}
+        \item the balls are distinguishable
+        \item the balls are indistinguishable
+    \end{enumerate}
+\end{enumerate}
+
+\section*{Homework 10 (due April 21, 2022)}
+
+\begin{enumerate}
+    \item What is the probability that a five-card poker hand contains a royal flush, that is, the 10, jack, queen, king, and ace of one suit?
+    \item Suppose that instead of three doors, there are four doors in the Monty Hall puzzle. What is the probability that you win by not changing once the host, who knows what is behind each door, opens a losing door and gives you the chance to change doors? What is the probability that you win by changing the door you select to one of the two remaining doors among the three that you did not select?
+    \item When we randomly select a permutation of $\{ 1, 2, 3 \}$, what is the probability of the following events?
+    \begin{enumerate}
+        \item 1 precedes 3.
+        \item 3 precedes 1 and 3 precedes 2.
+    \end{enumerate}
+    \item What is the probability of these events when we randomly permute the 26 lowercase letters?
+    \begin{enumerate}
+        \item The first 13 letters of the permutation are in alphabetical order.
+        \item a and z are next to each other in the permutation.
+        \item a and z are not next to each other in the permutation.
+    \end{enumerate}
+    \item Let $E$ be the event that a randomly generated bit string of length three contains an odd number of 1s, and let $F$ be the event that the string starts with 1. Are $E$ and $F$ independent?
+\end{enumerate}
+
+\section*{Homework 11 (due April 28, 2022)}
+
+\begin{enumerate}
+    \item $E$ and $F$ are events in a sample space, and $p(E) = \frac{2}{3}$, $p(F) = \frac{3}{4}$, and $p(F|E) = \frac{5}{8}$. Find $p(E|F)$.
+    \item Suppose that $E$, $F_1$, $F_2$, and $F_3$ are events from a sample space $S$ and that $F_1$, $F_2$, and $F_3$ are pairwise disjoint and their union is $S$. Find $p(F_2|E)$ if $p(E|F_1) = \frac{2}{7}$, $p(E|F_2) = \frac{3}{8}$, $p(E|F_3) = \frac{1}{2}$, $p(F_1) = \frac{1}{6}$, $p(F_2) = \frac{1}{2}$, and $p(F_3) = \frac{1}{3}$.
+    \item What is expected value when a \$1 lottery ticket is bought in which the purchaser wins exactly \$10 million if the ticket contains the six winning numbers chosen from the set $\{1, 2, 3, \ldots, 50\}$ and the purchaser wins nothing otherwise?
+    \item What is the variance of the number of times a 6 appears when a fair die is rolled 10 times?
+    \item Use Chebyshev's inequality to find an upper bound on the probability that the number of tails that come up when a biased coin with probability of heads equal to 0.6 is tossed $n$ times deviates from the mean by more than $\sqrt{n}$.
+\end{enumerate}
+
+\end{document}  

@@ -15,21 +15,6 @@
 \usepackage{makecell}
 % For colors
 \usepackage[dvipsnames]{xcolor}
-% For code
-\usepackage{listings}
-\lstdefinestyle{mystyle}{
-    basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbersep=5pt,                  
-    showspaces=false,                
-    showstringspaces=false,
-    showtabs=false,                  
-    tabsize=2
-}
-\lstset{style=mystyle}
 
 
 % Move title area to the top of the page
@@ -119,10 +104,10 @@ Chebyshev's Inequality tells us that:
 
 \[p(\left|X(s) - E(X)\right| \geq r) \leq \frac{V(X)}{r^2}\]
 
-In our problem, we will be finding the upper bound on the probability that the deviation of the coin flip is greater than $\sqrt{n}$. We can treat this problem as a Bernoulli experiment where the probability of success (getting a head) is $\frac{3}{5}$, or 0.6. 
+In our problem, we will be finding the upper bound on the probability that the deviation of the coin flip is greater than $\sqrt{n}$. We can treat this problem as a Bernoulli experiment where the probability of success (getting a tail) is $\frac{2}{5}$, or 0.4. 
 
-By Theorem 4.2, the expected value for mutually independent Bernoulli trials is $np$, which is $E(X) = n \cdot \frac{3}{5} = \frac{3n}{5}$ in this case. Similarly, the variance of mutually independent Bernoulli trials is $np(1-p)$, or $V(X) = n \cdot \frac{3}{5} \cdot \frac{2}{5} = \frac{6n}{25}$. Finally, we can plug in all these values in addition to $r = \sqrt{n}$:
+By Theorem 4.2, the expected value for mutually independent Bernoulli trials is $np$, which is $E(X) = n \cdot \frac{2}{5} = \frac{2n}{5}$ in this case. Similarly, the variance of mutually independent Bernoulli trials is $np(1-p)$, or $V(X) = n \cdot \frac{3}{5} \cdot \frac{2}{5} = \frac{6n}{25}$. Finally, we can plug in all these values in addition to $r = \sqrt{n}$:
 
-\[p\left(\left|X(s) - \frac{3n}{5}\right| \geq \sqrt{n} \right) \leq \frac{\frac{6n}{25}}{{(\sqrt{n})}^2} = \frac{6}{25}\]
+\[p\left(\left|X(s) - \frac{2n}{5}\right| \geq \sqrt{n} \right) \leq \frac{\frac{6n}{25}}{{(\sqrt{n})}^2} = \frac{6}{25}\]
 
 \end{document}
