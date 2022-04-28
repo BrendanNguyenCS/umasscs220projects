@@ -7,9 +7,10 @@
 \usepackage{comment} % For block commenting
 \usepackage{float} % For table positioning
 % For math equation formatting
-\usepackage{amsmath, amssymb, relsize}
+\usepackage{amsmath, amssymb, relsize, amsfonts}
 \newcommand{\PMod}[1]{\ (\mathrm{mod}\ #1)}
-\newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}\usepackage{parskip} % For automatic paragraph spacing/formatting
+\newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}
+\usepackage{parskip} % For automatic paragraph spacing/formatting
 \usepackage{relsize} % For increased math mode font sizing
 % For code blocks
 \usepackage{listings}
@@ -29,6 +30,7 @@
 % For side by side figures
 \usepackage{multicol}
 \usepackage{makecell}
+\usepackage{enumitem, tasks, varwidth}
 
 % Move title area to the top of the page
 \setlength{\droptitle}{-4em}
@@ -177,7 +179,7 @@ int bitCount(unsigned x) {
     Inductive Step: Assume that $a_j = 1$ for all nonnegative integers $j$ with $j \leq k$. Then note that
     \[a^{k+1} = \frac{a^k \cdot a^k}{a^{k-1}} = \frac{1 \cdot 1}{1} = 1.\]
     \item Give a recursive definition of the set of bit strings that are palindromes.
-    \item Design a recursive algorithm to find $a^{2^n}$, where $a$ is a real number and $n$ is a positive integer. Hint: Use the inequality $a^{2^{n+1}} = (a^{2^n})^2$.
+    \item Design a recursive algorithm to find $a^{2^n}$, where $a$ is a real number and $n$ is a positive integer. [\textit{Hint}: Use the inequality $a^{2^{n+1}} = (a^{2^n})^2$.]
 \end{enumerate}
 
 \section*{Homework 8 (due April 7, 2022)}
@@ -240,6 +242,107 @@ int bitCount(unsigned x) {
     \item What is expected value when a \$1 lottery ticket is bought in which the purchaser wins exactly \$10 million if the ticket contains the six winning numbers chosen from the set $\{1, 2, 3, \ldots, 50\}$ and the purchaser wins nothing otherwise?
     \item What is the variance of the number of times a 6 appears when a fair die is rolled 10 times?
     \item Use Chebyshev's inequality to find an upper bound on the probability that the number of tails that come up when a biased coin with probability of heads equal to 0.6 is tossed $n$ times deviates from the mean by more than $\sqrt{n}$.
+\end{enumerate}
+
+\section*{Homework 12 (due May 5, 2022)}
+\begin{enumerate}
+    \item Let $R$ be the relation represented by the matrix
+    \begin{flalign*}
+        &M_R = \left[
+        \begin{array}{c c c}
+         	0 & 1 & 1 \\
+         	1 & 1 & 0 \\
+         	1 & 0 & 1
+    	\end{array}
+        \right]&
+    \end{flalign*}
+    Find the matrix representing $R^2$.
+    \item Find the smallest relation containing the relation $\{(1,2),(1,4),(3,3),(4,1)\}$ that is
+    \begin{enumerate}
+        \item reflexive and transitive.
+        \item symmetric and transitive.
+        \item reflexive, symmetric, and transitive.
+    \end{enumerate}
+    \item Let $R$ be the relation on the set of ordered pairs of positive integers such that $((a,b),(c,d)) \in R$ if and only if $ad = bc$. Show that $R$ is an equivalence relation.
+    \item Determine whether the relations represented by these zero-one matrices are equivalence relations.
+    \setlength{\belowdisplayskip}{0pt}
+    \setlength{\abovedisplayskip}{-\baselineskip}
+    \begin{center}
+    \begin{varwidth}{\textwidth}
+    \begin{tasks}[label=(\alph*), label-width=1.5em, item-indent=2em, ref=(\alph*),label-offset=0em](3)
+        \task
+        \begin{align*}
+            &\left[
+            \begin{array}{c c c}
+             	1 & 1 & 1\\
+             	0 & 1 & 1\\
+             	1 & 1 & 1
+        	\end{array}
+            \right]&
+        \end{align*}
+        \task
+        \begin{align*}
+            &\left[
+            \begin{array}{c c c c}
+             	1 & 0 & 1 & 0\\
+             	0 & 1 & 0 & 1\\
+             	1 & 0 & 1 & 0\\
+             	0 & 1 & 0 & 1
+        	\end{array}
+            \right]&
+        \end{align*}
+        \task
+        \begin{align*}
+            &\left[
+            \begin{array}{c c c c}
+             	1 & 1 & 1 & 0\\
+             	1 & 1 & 1 & 0\\
+             	1 & 1 & 1 & 0\\
+             	0 & 0 & 0 & 1
+        	\end{array}
+            \right]&
+        \end{align*}
+    \end{tasks}
+    \end{varwidth}
+    \end{center}
+    \item Determine whether the relations represented by these zero-one matrices are partial orders.
+    \begin{center}
+    \begin{varwidth}{\textwidth}
+    \begin{tasks}[label=(\alph*), label-width=1.5em, item-indent=2em, ref=(\alph*),label-offset=0em](3)
+        \task
+        \begin{align*}
+            &\left[
+            \begin{array}{c c c}
+             	1 & 0 & 1\\
+             	1 & 1 & 0\\
+             	0 & 0 & 1
+        	\end{array}
+            \right]&
+        \end{align*}
+        \task
+        \begin{align*}
+            &\left[
+            \begin{array}{c c c}
+             	1 & 0 & 0\\
+             	0 & 1 & 0\\
+             	1 & 0 & 1
+        	\end{array}
+            \right]&
+        \end{align*}
+        \task
+        \begin{align*}
+            &\left[
+            \begin{array}{c c c c}
+             	1 & 0 & 1 & 0\\
+             	0 & 1 & 1 & 0\\
+             	0 & 0 & 1 & 1\\
+             	1 & 1 & 0 & 1
+        	\end{array}
+            \right]&
+        \end{align*}
+    \end{tasks}
+    \end{varwidth}
+    \end{center}
 \end{enumerate}
 
 \end{document}  

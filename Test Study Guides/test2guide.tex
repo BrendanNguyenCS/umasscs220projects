@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+\usepackage{nopageno} % For removing page numbers
+\usepackage[utf8]{inputenc}
+\usepackage{titling} % For positioning of title preamble
+\usepackage[margin=1in]{geometry} % For margin width setting
+\usepackage{comment} % For block commenting
+\usepackage{enumitem} % For list styling
+\usepackage{float} % For table positioning
+% For math equation formatting
+\usepackage{amsmath, amssymb, relsize, amsfonts}
+\newcommand{\PMod}[1]{\ (\mathrm{mod}\ #1)}
+\newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}
+% For automatic paragraph spacing/formatting
+\usepackage{parskip}
+% For side by side figures
+\usepackage{multicol}
+\usepackage{makecell}
+% For colors
+\usepackage[dvipsnames]{xcolor}
+
+
+% Move title area to the top of the page
+\setlength{\droptitle}{-4em}
+\addtolength{\droptitle}{-4pt} 
+% \setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1.25}
+% Disable paragraph indenting
+\setlength{\parindent}{0pt}
+% Change default font to sans font
+\renewcommand{\familydefault}{\sfdefault}
+
+\title{CS220 Test 2 Study Guide}
+\author{Ming Ouyang}
+\date{Week of May 2, 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{The First Question (50 points)}
+The first question comes directly from the textbook and lecture notes.
+
+\begin{enumerate}
+    \item Chapter 6 counting: the product rule, the sum rule, the subtraction rule, the division rule, the pigeonhole principle, permutation, combination, binomial coefficients, permutations with repetition, combinations with repetition
+    \item Chapter 7 discrete probability:  conditional probability, independence, binomial distribution, random variable, the birthday paradox, Bayes’ theorem, expected value, linearity of expectations, variance, the geometric distribution, Chebyshev’s inequality
+    \item Chapter 9 relations: reflexivity, symmetry, antisymmetry, transitivity, closures of relations, Warshall’s algorithm, equivalence relations, partial ordering, Hasse diagram
+    \item Chapter 10 graphs: complete graphs, bipartite graphs, paths, cycles, adjacency list, adjacency matrix, isomorphism, connectivity, Euler and Hamilton paths, planar graphs
+\end{enumerate}
+
+\section{The Second Question (30 points)}
+The second question is easier than homework questions.
+
+\begin{enumerate}
+    \item How many positive integers not exceeding 100 are divisible either by 4 or by 6?
+    \item Show that in a group of 10 people (where any two people are either friends or enemies), there are either three mutual friends or four mutual enemies, and there are either three mutual enemies or four mutual friends.
+    \item How many ways are there for eight men and five women to stand in a line so that no two women stand next to each other? [\textit{Hint}: First position the men and then consider possible positions for the women.]
+    \item Let $n$ be a positive integer. Show that
+    \begin{flalign*}
+    &\binom{2n}{n+1} + \binom{2n}{n} = \frac{\binom{2n+2}{n+1}}{2}.&
+    \end{flalign*}
+    \item What is the probability that a five-card poker hand contains at least one ace?
+    \item The final exam of a discrete mathematics course consists of 50 true/false questions, each worth two points, and 25 multiple-choice questions, each worth four points. The probability that Linda answers a true/false question correctly is 0.9, and the probability that she answers a multiple-choice question correctly is 0.8. What is her expected score on the final?
+    \item Let $R$ be a reflexive relation on a set $A$. Show that $R^n$ is reflexive for all positive integers $n$.
+    \item Let $R$ be the relation on the set $\{0,1,2,3\}$ containing the ordered pairs $(0,1)$, $(1,1)$, $(1,2)$, $(2,0)$, $(2,2)$, and $(3,0)$. Find the reflexive and symmetric closures of $R$.
+    \item Devise an algorithm to find the smallest equivalence relation containing a given relation.
+    \item The complementary graph $\overline{G}$ of a simple graph $G$ has the same vertices as $G$. Two vertices are adjacent in $\overline{G}$ if and only if they are not adjacent in $G$. Describe $\overline{K_{m,n}}$.
+\end{enumerate}
+
+\section{The Third Question (20 points)}
+The third question is similar to homework questions in difficulty.
+
+\begin{enumerate}
+    \item  The name of a variable in the C programming language is a string that can contain uppercase letters, lowercase letters, digits, or underscores. Further, the first character in the string must be a letter, either uppercase or lowercase, or an underscore. If the name of a variable is determined by its first eight characters, how many different variables can be named in C? [\textit{Note}: the name of a variable may contain fewer than eight characters.]
+    \item  Prove that at a party where there are at least two people, there are two people who know the same number of other people there.
+    \item Show that if $n$ is a positive integer, then $\binom{2n}{n} = 2\binom{n}{2} + n^2$.
+    \item Which is more likely: rolling a total of 8 when two dice are rolled or rolling a total of 8 when three dice are rolled?
+    \item Suppose that $E$ and $F$ are events such that $p(E) = 0.7$ and $p(F) = 0.5$. Show that $p(E \cup F) \geq 0.7$ and $p(E \cap F) \geq 0.2$.
+    \item Let $A$ be an event. Then $I_A$, the indicator random variable of $A$, equals 1 if $A$ occurs and equals 0 otherwise. Show that the expectation of the indicator random variable of $A$ equals the probability of $A$, that is, $E(I_A) = p(A)$.
+    \item Let $R$ be a symmetric relation. Show that $R^n$ is symmetric for all positive integers $n$.
+    \item Show that the closure of relation $R$ with respect to a property $P$, if it exists, is the intersection of all the relations with property $P$ that contain $R$.
+    \item Determine the number of different equivalence relations on a set with three elements by listing them.
+    \item Let $n$ be a positive integer. Show that a subgraph induced by a nonempty subset of the vertex set of $K_n$ is a complete graph.
+\end{enumerate}
+
+\section{Additional Practice Questions}
+
+\begin{enumerate}
+    \item Show many ways are there for a horse race with four horses to finish if ties are possible? [\textit{Note}: Any number of the four horses may tie.]
+    \item How many solutions are there to the inequality $x_1 + x_2 + x_3 \leq 11$, where $x_1$, $x_2$, and $x_3$ are nonnegative integers? [\textit{Hint}: Introduce an auxiliary variable $x_4$ such that $x_1 + x_2 + x_3 + x_4 = 11$.]
+    \item How many ways are there to deal hands of five-cards to each of six players from a deck containing 48 different cards?
+    \item What is the conditional probability that exactly four heads appear when a fair coin is flipped five times, given that the first flip came up tails?
+    \item Use Chebyshev's inequality to find an upper bound on the probability that the number of tails that come up when a fair coin is tossed $n$ times deviates from the mean by more than $5\sqrt{n}$.
+    \item Show that the relation $R$ on the set of all bit strings such that $sRt$ if and only if $s$ and $t$ contain the same number of 1's is an equivalence relation.
+    \item A partition $P_1$ is called a refinement of the partition $P_2$ if every set in $P_1$ is a subset of one of the sets in $P_2$. Show that the partition formed from congruence classes modulo 6 is a refinement of the partition formed from congruence classes modulo 3.
+    \item If $G$ is a simple graph with 15 edges and $\overline{G}$ has 13 edges, how many vertices does $G$ have?
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,155 @@
+\documentclass[11pt]{article}
+\usepackage{nopageno} % For removing page numbers
+\usepackage[utf8]{inputenc}
+\usepackage{titling} % For positioning of title preamble
+\usepackage[margin=1in]{geometry} % For margin width setting
+\usepackage{comment} % For block commenting
+\usepackage{enumitem} % For list styling
+\usepackage{float} % For table positioning
+% For math equation formatting
+\usepackage{amsmath, amssymb, relsize, xfrac}
+\newcommand{\PMod}[1]{\ (\mathrm{mod}\ #1)}
+\newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}
+% For automatic paragraph spacing/formatting
+\usepackage{parskip}
+% For side by side figures
+\usepackage{multicol}
+\usepackage{makecell}
+% For colors
+\usepackage[dvipsnames]{xcolor}
+
+
+% Move title area to the top of the page
+\setlength{\droptitle}{-4em}
+\addtolength{\droptitle}{-4pt} 
+% \setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1.25}
+% Disable paragraph indenting
+\setlength{\parindent}{0pt}
+% Change default font to sans font
+\renewcommand{\familydefault}{\sfdefault}
+
+\title{CS220 Test 1 Study Guide}
+\author{Ming Ouyang}
+\date{Week of March 24, 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{The First Question (50 points)}
+The first question comes directly from the textbook and lecture notes.
+
+\begin{enumerate}
+    \item Is $p \to q$ equivalent to $\neg p \to \neg q$?
+    \item Is $\neg (p \leftrightarrow q)$ equivalent to $p \leftrightarrow \neg q$?
+    \item Describe \textit{modus ponens}.
+    \item Let $S$ be a set and $|S| = k$, where $k$ is a nonnegative integer. What is $|\mathcal{P}(S)|$?
+    \item Let $r$ be the common ratio of a geometric series, $0 < r < 1$. Find the sum $\sum_{i=0}^{n} ar^i$.
+    \item Demonstrate $3 \log n + 5 \in O(\log n)$.
+    \item What is the worst-case and average-case runtime of binary search?
+    \item Find B\'{e}zout's coefficients of 252 and 198.
+    \item Find an inverse of 5 modulo 11.
+    \item Use mathematical induction to prove $\sum_{i=1}^{n} i = \frac{n(n + 1)}{2}$.
+\end{enumerate}
+
+\section{The Second Question (30 points)}
+The second question is easier than homework questions.
+
+\begin{enumerate}
+    \item Prove or disprove that $(p \to q) \to r$ and $p \to (q \to r)$ are equivalent.
+    \item Show that the set of irrational numbers is an uncountable set.
+    \item Prove that there is no smallest positive rational number.
+    \item Determine which relationship $(\subseteq, =, \supseteq)$ is true for the pair of sets.
+    \begin{enumerate}
+        \item $A \cup B$, $A \cup (B - A)$
+        \item $A \cup (B \cap C)$, $(A \cup B) \cap C$
+        \item $(A - B) \cup (A - C)$. $A - (B \cap C)$
+        \item $(A - C) - (B - C)$, $A - B$
+    \end{enumerate}
+    \item Prove or disprove that if $A$, $B$, and $C$ are sets then $A - (B \cap C) = (A - B) \cap (A - C)$.
+    \item What is the asymptotic relationship between $n^{\frac{3}{4}}(\log n)^{\frac{4}{3}}$ and $n^{\frac{4}{3}}(\log n)^{\frac{3}{4}}$?
+    \item Show that an integer is divisible by 9 if and only if the sum of its decimal digits is divisible by 9.
+    \item Prove that there are no solutions in positive integers to the equation $x^4 + y^4 = 100$.
+    \item Use the Euclidean algorithm to find $\gcd(203, 101)$ and $\gcd(34, 21)$.
+    \item Use mathematical induction to show that $\sum_{i=0}^{n} (i + 1) = \frac{(n + 1)(n + 2)}{2}$ whenever $n$ is a nonnegative integer.
+\end{enumerate}
+
+\section{The Third Question (20 points)}
+The third question is similar to homework questions in difficulty.
+
+\begin{enumerate}
+    \item Prove that $(q \land (p \to \neg q)) \to \neg p$ is a tautology using propositional equivalence and the laws of logic.
+    \item Recall that two sets A and B have the same cardinality if and only if there is a one-to-one correspondence from A to B. Prove that the open interval $(0, 1)$ has the same cardinality as the open interval $(0, 2)$.
+    \item Arrange the functions in a list so that each function is big-O of the next function:
+    
+    $n \cdot 2^n$, $\log(n^n)$, $(n^{100})^n$, $\log(n!)$, $3^n$, $2^{n \log n}$, $n^{\frac{3}{2}}$
+    
+    \item Show that the function $f(n) = (n + 2)\log(n^2 + 1) + \log(n^3 + 1)$ is O($n \log n$).
+    \item Take a positive integer and we can write it in the octal number system. Prove or disprove: The positive integer is divisible 7 if and only if the sum of its octal digits is divisible by 7.
+    \item Use mathematical induction to prove that $2\ |\ (n^2 + n)$ for all $n \geq 0$. [\textit{Note}: this means $n^2 + n$ is an even number.]
+    \item Let $m$ be a positive integer, and let $a$, $b$, and $c$ be integers. Show that if $a \equiv b \PMod{m}$, then $a - c \equiv b - c \PMod{m}$.
+    \item Use the telescoping sum technique to derive $\sum_{i=1}^{n} i = \frac{n(n + 1)}{2}$.
+    \item Show that $3^n < n!$ whenever $n$ is an integer with $n \geq 7$.
+    \item Suppose that the only currency were 3-dollar bills and 10-dollar bills. Show that every amount greater than 17 dollars could be made from a combination of these bills.
+\end{enumerate}
+
+\section{Additional Practice Questions}
+
+\begin{enumerate}
+    \item Is the assertion ``This statement is false" a proposition?
+    \item Explain, without using a truth table, why $(p \vee \neg q) \wedge (q \vee \neg r) \wedge (p \vee \neg p)$ is true when $p$, $q$, and $r$ have the same truth value and it is false otherwise.
+    \item The $n$-th statement in a list of 100 statements is ``Exactly $n$ of the statements in this list are false."
+    \begin{enumerate}
+        \item What conclusions can you draw from these statements?
+        \item Answer part (a) if the $n$-th statement is ``At least $n$ of the statements in this list are false."
+        \item Answer part (b) assuming that the list contains 99 statements.
+    \end{enumerate}
+    \item Suppose that five ones and four zeros are arranged around a circle. Between any two equal bits you insert a 0 and between any two unequal bits you insert a 1 to produce nine new bits. Then you erase the nine original bits. Show that when you iterate this procedure, you can never get nine zeros. [\textit{Hint}: Work backward, assuming that you did end up with nine zeros.]
+    \item The symmetric difference of $A$ and $B$, denoted by $A \oplus B$, is the set containing those elements in either $A$ or $B$, but not in both $A$ and $B$. If $A$, $B$, $C$. and $D$ are sets, does it follow that $(A \oplus B) \oplus (C \oplus D) = (A \oplus C) \oplus (B \oplus D)$?
+    \item For each of these lists of integers, provide a simple formula or rule that generates the terms of an integer sequence that begins with the given list. Assuming that your formula or rule is correct, determine the next three terms of the sequence.
+    \begin{enumerate}
+        \item 3, 6, 11, 18, 27, 18, 38, 51, 66, 83, 102, \ldots
+        \item 0, 2, 8, 26, 80, 242, 728, 2186, 6560, 19682, \ldots
+        \item 1, 3, 15, 105, 945, 10395, 135135, 2027025, 34459425, \ldots
+    \end{enumerate}
+    \item Let $a_n$ be the $n$-th term of the sequence 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, \ldots, be constructed by including the integer $k$ exactly $k$ times. Show that
+    \[a_n = \lfloor \sqrt{2n} + \frac{1}{2} \rfloor.\]
+    \item The ternary search algorithm locates an element in a list of increasing integers by successively splitting the list into three sublists of equal (or as close to equal as possible) size, and restricting the search to the appropriate piece. Specify the steps of this algorithm.
+    \item Show that if there were a coin worth 12 cents, the greedy algorithm using quarters, 12-cent coins, dimes, nickels, and pennies would not always produce change using the fewest coins possible.
+    \item Give the big-O of these functions.
+    \begin{enumerate}
+        \item $n \log(n^2 + 1) + n^2\log n$
+        \item $(n\log n + 1)^2 + (\log n + 1)(n^2 + 1)$
+        \item $n^{2^n} + n^{n^2}$
+    \end{enumerate}
+    \item Show that if $a$, $b$m $k$, and $m$ are integers such that $k \geq 1$, $m \geq 2$, and $a \equiv b \PMod{m}$, then $a^k \equiv b^k \PMod{m}$.
+    \item Show that if $a$, $b$m $c$, and $m$ are integers such that $m \geq 2$, $c > 0$, and $a \equiv b \PMod{m}$, then $ac \equiv bc \PMod{m}$.
+    \item Show that if $a$ and $b$ are both positive integers, then $(2^a - 1) \Mod{(2^b - 1)} = 2^{a \Mod{b}} - 1$.
+    \item Solve the system of congruence $x \equiv 3 \PMod{6}$ and $x \equiv 4 \PMod{7}$.
+    \item Prove that for every positive integer $n$,
+    \[1 \cdot 2 + 2 \cdot 3 + \cdots + n(n + 1) = \frac{n(n + 1)(n + 2)}{3}\]
+    \item Which amounts of money can be formed using just two-dollar bills and five-dollar bills? Prove your answer using strong induction.
+    \item Show that the set $S$ defined by $1 \in S$ and $s + t \in S$ whenever $s \in S$ and $t \in S$ is the set of positive integers.
+    \item Use structural induction to show that $n(T) \geq 2h(T) + 1$, where $T$ is a full binary tree, $n(T)$ is the number of vertices of $T$, and $h(T)$ is the height of $T$.
+    \item Devise a recursive algorithm to find $a^{2^n}$, where $a$ is a real number and $n$ is a positive integer. [\textit{Hint}: Use the equality $a^{2^{n+1}} = (a^{2^n})^2$.]
+\end{enumerate}
+
+\section{Sample Test 1}
+
+\begin{enumerate}
+    \item Solve $4x \equiv 5 \PMod{9}$.
+    \item Show that if there were a coin worth 12 cents, the greedy algorithm using quarters, 12-cent coins, dimes, nickels, and pennies would not always produce change using the fewest coins possible.
+    \item Explain, without using a truth table, why $(p \lor \neg q) \land (q \lor \neg r) \land (r \lor \neg p)$ is true when $p$, $q$, and $r$ have the same truth value and it is false otherwise.
+\end{enumerate}
+
+\section{Real Test 1 Questions}
+The following questions were the questions I received for test 1.
+
+\begin{enumerate}
+    \item Use mathematical induction to prove that $n^2 + n < n^3$ for all $n > 2$.
+    \item Given that $a$, $b$, and $c$ are nonnegative integers, show that if $a|c$ and $b|c$, then $ab|c^2$. [\textit{Hint}: $x|y$ means that $x$ divides $y$ or that $y$ is divisible by $x$.]
+    \item Prove that the open interval $(0, 1)$ has the same cardinality as the open interval $(0, 2)$.
+\end{enumerate}
+
+\end{document}
