@@ -1,0 +1,89 @@
+\documentclass[11pt]{article}
+\usepackage{nopageno} % For removing page numbers
+\usepackage[utf8]{inputenc}
+\usepackage{titling} % For positioning of title preamble
+\usepackage[margin=1in]{geometry} % For margin width setting
+\usepackage{comment} % For block commenting
+\usepackage{enumitem} % For list styling
+\usepackage{float} % For table positioning
+% For math equation formatting
+\usepackage{amsmath, amssymb, relsize}
+% For automatic paragraph spacing/formatting
+\usepackage{parskip}
+% For side by side figures
+\usepackage{multicol}
+\usepackage{makecell}
+% For colors
+\usepackage[dvipsnames]{xcolor}
+
+
+% Move title area to the top of the page
+\setlength{\droptitle}{-4em}
+\addtolength{\droptitle}{-4pt} 
+% \setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1.25}
+% Disable paragraph indenting
+\setlength{\parindent}{0pt}
+% Change default font to sans font
+\renewcommand{\familydefault}{\sfdefault}
+% Change default vertical spacing for align environments
+\setlength{\jot}{7pt}
+
+\title{CS220 Discrete Math - Homework \#12}
+\author{Brendan Nguyen - \texttt{brendan.nguyen001@umb.edu}}
+\date{May 5, 2022}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question 1}
+The matrix representing $R^2$ can be found by multiplying the matrix that represents $R$ by itself.
+
+\[
+M_{R^2} = \left[
+\begin{array}{c c c}
+    0 & 1 & 1 \\
+    1 & 1 & 0 \\
+    1 & 0 & 1
+\end{array}
+\right]
+\cdot 
+\left[
+\begin{array}{c c c}
+    0 & 1 & 1 \\
+    1 & 1 & 0 \\
+    1 & 0 & 1
+\end{array}
+\right]
+= 
+\left[
+\begin{array}{c c c}
+    1 & 1 & 1 \\
+    1 & 1 & 1 \\
+    1 & 1 & 1
+\end{array}
+\right]
+\]
+
+\section*{Question 2}
+
+
+\section*{Question 3}
+To show that $R$ is an equivalence relation, we must show that $R$ is reflexive, symmetric, and transitive. 
+
+We can say that $R$ is \textbf{reflexive} because $((a,b), (a,b)) \in R$ since $ab = ab$. 
+
+If $ab = bc$, then $cb = da$ and $((c,d), (a,b)) \in R$, meaning that $R$ is \textbf{symmetric}. We then denote $(e,f)$ as another ordered pair in the relation. 
+
+If they were to follow the previously stated rule, then $((a,b), (c,d)) \in R$ and $((c,d), (e,f)) \in R$ which means that $ad = bc$ and $cf = de$. Multiplying this system of equations together results in $acdf = bcde$. Simplifying this equation results in $af = be$. Therefore $((a,b), (e,f)) \in R$ meaning that $R$ is also \textbf{transitive}.
+
+With all of this in mind, we can say that $R$ is an equivalence relation because it is reflexive, symmetric, and transitive.
+
+\section*{Question 4}
+
+
+\section*{Question 5}
+
+
+\end{document}

@@ -43,14 +43,14 @@ Given that $p(E) = \frac{2}{3}$, $p(F) = \frac{3}{4}$, and $p(F|E) = \frac{5}{8}
 p(F|E) &= \frac{p(E \cap F)}{p(E)}\\
 p(E \cap F) &= p(F|E)p(E)\\
 &= \left(\frac{5}{8}\right)\left(\frac{2}{3}\right)\\
-&= \frac{5}{12}
+&= \frac{5}{12} \approx 0.417
 \end{flalign*}
 
 Finally, all we have to do is solve for $p(E|F)$ similarly to how to solved the above.
 \begin{flalign*}
 p(E|F) &= \frac{p(E \cap F)}{p(F)}\\
 &= \left(\frac{5}{12}\right)\left(\frac{4}{3}\right)\\
-&= \frac{5}{9}
+&= \frac{5}{9} \approx 0.556
 \end{flalign*}
 
 \section*{Question 2}
@@ -69,7 +69,7 @@ p(F_2|E) &= \frac{p(E|F_2)p(F_2)}{p(E|F_1)p(F_1) + p(E|F_2)p(F_2) + p(E|F_3)p(F_
 &= \frac{\left(\frac{3}{8}\right)\left(\frac{1}{2}\right)}{\left(\frac{2}{7}\right)\left(\frac{1}{6}\right) + \left(\frac{3}{8}\right)\left(\frac{1}{2}\right) + \left(\frac{1}{2}\right)\left(\frac{1}{3}\right)}\\
 &= \frac{\frac{3}{16}}{\frac{1}{21} + \frac{3}{16} + \frac{1}{6}}\\
 &= \frac{\frac{3}{16}}{\frac{45}{112}} = \left(\frac{3}{16}\right)\left(\frac{112}{45}\right)\\
-&= \frac{7}{15}
+&= \frac{7}{15} \approx 0.467
 \end{flalign*}
 
 \section*{Question 3}
@@ -85,10 +85,19 @@ E(t) &= f(\text{winning})P(\text{winning}) + f(\text{losing})P(\text{losing})\\
 &= \frac{10,000,000}{\binom{50}{6}} - 1\\
 &= \frac{10,000,000}{15,890,700} - 1\\
 &= 0.629 - 1\\
-&= -0.371
+&\approx -0.371
 \end{flalign*}
 
 Our expected value of -0.371 means that a person loses 37 cents on average every time you pay the \$1 price for a lottery ticket.
+
+The wording of the question can also be understood as the expected value of the ticket given that you have already bought the ticket. This changes the expected value to not include the value of a losing ticket (which would be \$0). Therefore, the expected value just be:
+\begin{align*}
+E(t) &= f(\text{winning})P(\text{winning})\\
+&= \frac{10,000,000}{\binom{50}{6}}\\
+&\approx 0.629
+\end{align*}
+
+This expected value of 0.629 means that a ticket buyer is expected to win 63 cents on average for every ticket.
 
 \section*{Question 4}
 To find the variance of the number of times a 6 appears when a fair die is rolled 10 times, we can use the variance for a binomial distribution which is given by:
@@ -97,7 +106,7 @@ To find the variance of the number of times a 6 appears when a fair die is rolle
 
 Where $n$ is the number of trials and $p$ is the probability of getting a success in a fair trial. In this situation, we have 10 trials with the probability of rolling a 6, the successful result, being $\frac{1}{6}$. Therefore, the variance is:
 
-\[\sigma^2 = np(1-p) = (10)\left(\frac{1}{6}\right)\left(1- \frac{1}{6}\right) = (10)\left(\frac{1}{6}\right)\left(\frac{5}{6}\right) = \frac{25}{18} \approx 1.39\]
+\[\sigma^2 = npq = np(1-p) = (10)\left(\frac{1}{6}\right)\left(1- \frac{1}{6}\right) = (10)\left(\frac{1}{6}\right)\left(\frac{5}{6}\right) = \frac{25}{18} \approx 1.39\]
 
 \section*{Question 5}
 Chebyshev's Inequality tells us that:
@@ -108,6 +117,6 @@ In our problem, we will be finding the upper bound on the probability that the d
 
 By Theorem 4.2, the expected value for mutually independent Bernoulli trials is $np$, which is $E(X) = n \cdot \frac{2}{5} = \frac{2n}{5}$ in this case. Similarly, the variance of mutually independent Bernoulli trials is $np(1-p)$, or $V(X) = n \cdot \frac{3}{5} \cdot \frac{2}{5} = \frac{6n}{25}$. Finally, we can plug in all these values in addition to $r = \sqrt{n}$:
 
-\[p\left(\left|X(s) - \frac{2n}{5}\right| \geq \sqrt{n} \right) \leq \frac{\frac{6n}{25}}{{(\sqrt{n})}^2} = \frac{6}{25}\]
+\[p\left(\left|X(s) - \frac{2n}{5}\right| \geq \sqrt{n} \right) \leq \frac{\frac{6n}{25}}{{(\sqrt{n})}^2} = \frac{6}{25} = 0.24\]
 
 \end{document}
