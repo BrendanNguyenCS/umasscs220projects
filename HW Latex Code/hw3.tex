@@ -24,6 +24,8 @@
 \renewcommand{\familydefault}{\sfdefault}
 % Change default vertical spacing for align environments
 \setlength{\jot}{7pt}
+% Redefine list numbering system
+\renewcommand{\labelenumi}{(\alph{enumi})}
 
 \title{CS220 Discrete Math - Homework \#3}
 \author{Brendan Nguyen - \texttt{brendan.nguyen001@umb.edu}}
@@ -61,7 +63,6 @@ Using $g(x) > g(y) \defeq \frac{1}{f(x)} < \frac{1}{f(y)}$ that we proved previo
 Meaning that $f(x)$ is strictly increasing.
 
 \section*{Question 3}
-\renewcommand{\labelenumi}{(\alph{enumi})}
 
 \begin{enumerate}
     \item $A_n = 1.09 \cdot A_{n-1}$ denotes the recurrence relation for the amount in the account at the end of $n$ years.

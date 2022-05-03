@@ -28,6 +28,8 @@
 \renewcommand{\familydefault}{\sfdefault}
 % Change default vertical spacing for align environments
 \setlength{\jot}{7pt}
+% Redefine list numbering system
+\renewcommand{\labelenumi}{(\alph{enumi})}
 
 \title{CS220 Discrete Math - Homework \#8}
 \author{Brendan Nguyen - \texttt{brendan.nguyen001@umb.edu}}
@@ -65,7 +67,6 @@ Using the equations above, we can say that all the boxes would contain $\leq (n_
 \section*{Question 4}
 Given the letters ABCDEFGH,
 
-\renewcommand{\labelenumi}{(\alph{enumi})}
 \begin{enumerate}
     \item The set of permutations of the letters ABCDEFGH that contain the string ED is the same as the set of permutations of the 7-element set \{A, B, C, ED, F, G, H\}. Therefore, there are 7!, or 5040, permutations.
     \item Similarly, the set of permutations that contain CDE is the set of permutations of the 6-element set \{A, B, CDE, F, G, H\}. Therefore, there are 6!, or 720, permutations.

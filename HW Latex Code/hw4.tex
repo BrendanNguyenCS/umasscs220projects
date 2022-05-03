@@ -39,7 +39,8 @@
 \setlength{\parindent}{0pt}
 % Increase width between table columns
 \setlength{\tabcolsep}{1cm}
-
+% Redefine list numbering system
+\renewcommand{\labelenumi}{(\alph{enumi})}
 
 \title{CS220 Discrete Math - Homework \#4}
 \author{Brendan Nguyen - \texttt{brendan.nguyen001@umb.edu}}
@@ -65,7 +66,7 @@ Since the sum $(n^k + n^k + \cdots + n^k)$ is greater than the sum $(1^k + 2^k +
 
 \section*{Question 3}
 There are some statements that we can say about the big-$\mathrm{O}$ estimates involved in the problem:
-\begin{enumerate}
+\begin{enumerate}[label=\arabic*.]
     \item Logarithmic functions grow slower than all positive powers of $n$ (i.e. $\sqrt{n}$, $n$, $n^2$, $n^3$, etc.)
     \item Exponential functions grow faster than polynomial functions
     \item Factorials grow faster than exponential functions
@@ -89,8 +90,6 @@ int bitCount(unsigned x) {
     return count;
 }
 \end{lstlisting}
-
-\renewcommand{\labelenumi}{(\alph{enumi})}
 
 \begin{enumerate}
     \item The best way to show that the above function returns the number of 1 bits in the unsigned integer $\texttt{x}$ is to use an example of the computation of unsigned int $\texttt{x = 7}$.

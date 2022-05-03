@@ -28,6 +28,8 @@
 \renewcommand{\familydefault}{\sfdefault}
 % Change default vertical spacing for align environments
 \setlength{\jot}{7pt}
+% Redefine list numbering system
+\renewcommand{\labelenumi}{(\alph{enumi})}
 
 \title{CS220 Discrete Math - Homework \#9}
 \author{Brendan Nguyen - \texttt{brendan.nguyen001@umb.edu}}
@@ -93,7 +95,6 @@ Another solution to this problem is adjusting our bars and stars model. In this 
 \[\binom{6+3-1}{3} = \binom{8}{3} = \frac{8!}{3!(8-3)!} = \frac{8!}{3! \cdot 5!} = 56 \text{ ways}\]
 
 \section*{Question 5}
-\renewcommand{\labelenumi}{(\alph{enumi})}
 
 \begin{enumerate}
     \item In order to find the number of ways to place 5 distinguishable balls into 7 distinguishable boxes, we have to find the number of permutations since order matters, which is given by: 
