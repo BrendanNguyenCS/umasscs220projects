@@ -74,20 +74,20 @@
 The expanded form of the given compound composition is:
 \[
     \begin{split}
-        \bigwedge_{i=1}^{n-1} \bigwedge_{j=i+1}^n (\neg p_i \vee \neg p_j) &= (\neg p_1 \vee \neg p_2) \wedge (\neg p_1 \vee \neg p_3) \wedge (\neg p_1 \vee \neg p_4)\\
-        &\quad\wedge \ldots \wedge (\neg p_1 \vee \neg p_n) \wedge (\neg p_2 \vee \neg p_3) \wedge \ldots \wedge (\neg p_2 \vee \neg p_n)\\
-        &\quad\wedge \ldots \wedge (\neg p_{n-1} \vee \neg p_n)
+        \bigwedge_{i=1}^{n-1} \bigwedge_{j=i+1}^n (\neg p_i \lor \neg p_j) &= (\neg p_1 \lor \neg p_2) \land (\neg p_1 \lor \neg p_3) \land (\neg p_1 \lor \neg p_4)\\
+        &\quad\land \ldots \land (\neg p_1 \lor \neg p_n) \land (\neg p_2 \lor \neg p_3) \land \ldots \land (\neg p_2 \lor \neg p_n)\\
+        &\quad\land \ldots \land (\neg p_{n-1} \lor \neg p_n)
     \end{split}
 \]
 	
 Using what we know:
 
 \begin{enumerate}[label=\arabic*.]
-  \item DeMorgan's Law: $(\neg p_i \vee \neg p_j) = \neg (p_i \wedge p_j)$
+  \item DeMorgan's Law: $(\neg p_i \lor \neg p_j) = \neg (p_i \land p_j)$
   \item The above should be $\texttt{true}$ for all $i$ and $j$
 \end{enumerate}
 
-Statement 2 implies that $(p_i \wedge p_j)$ should be $\texttt{false}$ for all $i$ and $j$, which can only be fulfilled for at most 1 $p$ that is $\texttt{true}$. The case of at most 1 $p$ that is $\texttt{true}$ results in $(\neg p_i \vee \neg p_j)$ is always $\texttt{true}$.
+Statement 2 implies that $(p_i \land p_j)$ should be $\texttt{false}$ for all $i$ and $j$, which can only be fulfilled for at most 1 $p$ that is $\texttt{true}$. The case of at most 1 $p$ that is $\texttt{true}$ results in $(\neg p_i \lor \neg p_j)$ is always $\texttt{true}$.
 
 \subsection*{Question 2}
 The truth table is as follows:
@@ -95,7 +95,7 @@ The truth table is as follows:
 \centering
     \begin{tabular}{|c c c|c|c|c|c|c|}
     \hline
-    $p$ & $q$ & $r$ & $p \wedge q$ & $\neg r$ & $(p \wedge q) \vee \neg r$ \\ \hline
+    $p$ & $q$ & $r$ & $p \land q$ & $\neg r$ & $(p \land q) \lor \neg r$ \\ \hline
     T & T & T & T & F & T\\ \hline
     T & T & F & T & T & T\\ \hline
     T & F & T & F & F & F\\ \hline
@@ -105,7 +105,7 @@ The truth table is as follows:
     F & F & T & F & F & F\\ \hline
     F & F & F & F & T & T\\ \hline
     \end{tabular}
-    \caption{Expanded truth table for $(p \wedge q) \vee \neg r$}
+    \caption{Expanded truth table for $(p \land q) \lor \neg r$}
     \label{table:1}
 \end{table}
 
@@ -119,21 +119,21 @@ Testing the truth values of $p$ and $q$ for the compound proposition, you get:
 \centering
     \begin{tabular}{|c c|c|c|c|c|c|}
     \hline
-    $p$ & $q$ & $\neg p$ & $p \to q$ & $\neg p \wedge (p \to q)$ & $\neg q$ & $(\neg p \wedge (p \to q)) \to \neg q$\\ \hline
+    $p$ & $q$ & $\neg p$ & $p \to q$ & $\neg p \land (p \to q)$ & $\neg q$ & $(\neg p \land (p \to q)) \to \neg q$\\ \hline
     F & F & T & T & T & T & T\\ \hline
     F & T & T & T & T & F & F\\ \hline
     T & F & F & F & F & T & T\\ \hline
     T & T & F & T & F & F & T\\ \hline
     \end{tabular}
-    \caption{Expanded truth table for $(\neg p \wedge (p \to q)) \to \neg q$}
+    \caption{Expanded truth table for $(\neg p \land (p \to q)) \to \neg q$}
     \label{table:2}
 \end{table}
 
-By definition of a tautology, the compound proposition $(\neg p \wedge (p \to q)) \to \neg q$ is not a tautology because not all truth values are $\texttt{true}$ for all $p$ and $q$.
+By definition of a tautology, the compound proposition $(\neg p \land (p \to q)) \to \neg q$ is not a tautology because not all truth values are $\texttt{true}$ for all $p$ and $q$.
 
 \subsection*{Question 5}
 
-The simplest way to evaluate the logical equivalence of the compound propositions $(p \to q) \vee (p \to r)$ and $p \to (q \vee r)$ is to compare their truth tables.
+The simplest way to evaluate the logical equivalence of the compound propositions $(p \to q) \lor (p \to r)$ and $p \to (q \lor r)$ is to compare their truth tables.
 
 \begin{comment}
 Combine the 2 following tables and highlight the columns with the compound propositions
@@ -144,7 +144,7 @@ Combine the 2 following tables and highlight the columns with the compound propo
 \centering
     \begin{tabular}{|c c c|c|c|g|c|g|}
     \hline
-    $p$ & $q$ & $r$ & $p \to q$ & $p \to r$ & $(p \to q) \vee (p \to r)$  & $q \vee r$ & $p \to (q \vee r)$\\ \hline
+    $p$ & $q$ & $r$ & $p \to q$ & $p \to r$ & $(p \to q) \lor (p \to r)$  & $q \lor r$ & $p \to (q \lor r)$\\ \hline
     T & T & T & T & T & T & T & T\\ \hline
     T & T & F & T & F & T & T & T\\ \hline
     T & F & T & F & T & T & T & T\\ \hline
@@ -154,7 +154,7 @@ Combine the 2 following tables and highlight the columns with the compound propo
     F & F & T & T & T & T & T & T\\ \hline
     F & F & F & T & T & T & T & T\\ \hline
     \end{tabular}
-    \caption{Expanded truth tables for $(p \to q) \vee (p \to r)$ and $p \to (q \vee (p \to r)$}
+    \caption{Expanded truth tables for $(p \to q) \lor (p \to r)$ and $p \to (q \lor r)$}
     \label{table:3}
 \end{table}
 
@@ -164,7 +164,7 @@ Combine the 2 following tables and highlight the columns with the compound propo
 \centering
     \begin{tabular}{|c|c|c|c|c|}
     \hline
-    $p$ & $q$ & $r$ & $q \vee r$ & $p \to (q \vee r)$\\ \hline
+    $p$ & $q$ & $r$ & $q \lor r$ & $p \to (q \lor r)$\\ \hline
     T & T & T & T & T\\ \hline
     T & T & F & T & T\\ \hline
     T & F & T & T & T\\ \hline
@@ -174,7 +174,7 @@ Combine the 2 following tables and highlight the columns with the compound propo
     F & F & T & T & T\\ \hline
     F & F & F & T & T\\ \hline
     \end{tabular}
-    \caption{Expanded truth table for $p \to (q \vee (p \to r)$}
+    \caption{Expanded truth table for $p \to (q \lor (p \to r)$}
     \label{table:4}
 \end{table}
 \end{comment}
@@ -195,8 +195,8 @@ Comparing the 2 truth tables shown in Table \ref{table:3}, you can see that for 
     \item For the domain of $x$ being all students and that $C(x)$ is a predicate for "$x$ is in CS220" 
     \begin{enumerate}
         \item $\forall x(C(x) \to P(x))$ represents the statement, "Everyone in CS220 has a cellphone."
-        \item $\exists x(C(x) \wedge Q(x))$ represents the statement, "Somebody in CS220 can solve quadratic equations."
-        \item $\exists x(C(x) \wedge \neg R(x))$ represents the statement, "Somebody in CS 220 does not want to be rich."
+        \item $\exists x(C(x) \land Q(x))$ represents the statement, "Somebody in CS220 can solve quadratic equations."
+        \item $\exists x(C(x) \land \neg R(x))$ represents the statement, "Somebody in CS 220 does not want to be rich."
     \end{enumerate}
 \end{enumerate}
 
@@ -205,18 +205,18 @@ The argument with the given premises and the conclusion $r$ is valid as shown be
 \begin{table}[H]
     \begin{tabular}{>{\stepcounter{rowno}\therowno. }l l}
          \multicolumn{1}{l}{\textbf{Step}} & \textbf{Reason} \\
-         $(p \wedge t) \to (r \vee s)$ & Premise\\
-         $\neg p \vee \neg t \vee r \vee s$ & Logical equivalence of (1)\\
-         $s \vee (\neg p \vee \neg t \vee r)$ & Commutative and Associative laws on (2)\\
+         $(p \land t) \to (r \lor s)$ & Premise\\
+         $\neg p \lor \neg t \lor r \lor s$ & Logical equivalence of (1)\\
+         $s \lor (\neg p \lor \neg t \lor r)$ & Commutative and Associative laws on (2)\\
          $\neg s$ & Premise\\
-         $\neg p \vee \neg t \vee r$ & Disjunctive syllogism on (3) and (4)\\
+         $\neg p \lor \neg t \lor r$ & Disjunctive syllogism on (3) and (4)\\
          $u \to p$ & Premise\\
-         $\neg u \vee p$ & Logical equivalence of (6)\\
-         $p \vee \neg u$ & Commutative law on (7)\\
-         $\neg u \vee \neg t \vee r$ & Resolution rule on (5) and (7)\\
-         $\neg (u \wedge t) \vee r$ & DeMorgan's Law on (9)\\
-         $(u \wedge t) \to r$ & Logical equivalence of (10)\\
-         $q \to (u \wedge t)$ & Premise\\
+         $\neg u \lor p$ & Logical equivalence of (6)\\
+         $p \lor \neg u$ & Commutative law on (7)\\
+         $\neg u \lor \neg t \lor r$ & Resolution rule on (5) and (7)\\
+         $\neg (u \land t) \lor r$ & DeMorgan's Law on (9)\\
+         $(u \land t) \to r$ & Logical equivalence of (10)\\
+         $q \to (u \land t)$ & Premise\\
          $q \to r$ & Hypothetical syllogism on (12) and (11)\\
          $q$ & Premise\\
          $r$ & Modus ponens on (14) and (13)
@@ -246,7 +246,7 @@ In the statement above, $p$ represents the statement, "$S$ is true," and $q$ rep
 The statement, "No one has more than two grandmothers," can be rewritten as, "There does not exists three different people that are grandmothers of the same person". We can translate this statement into a predicate as shown below:
 
 \[
-\forall x \Bigg[ \neg \exists w \exists y \exists z [ G(w,x) \wedge G(y,x) \wedge G(z,x) \wedge (w \neq y \neq z)] \> \Bigg]
+\forall x \Bigg[ \neg \exists w \exists y \exists z [ G(w,x) \land G(y,x) \land G(z,x) \land (w \neq y \neq z)] \> \Bigg]
 \]
 
 where $x$ is a person and $w$, $y$, and $z$ are grandmothers of person $x$.

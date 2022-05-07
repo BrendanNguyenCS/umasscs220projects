@@ -46,8 +46,8 @@
     \item For the domain of $x$ being all students and that $C(x)$ is a predicate for "$x$ is in CS220" 
     \begin{enumerate}
         \item $\forall x(C(x) \to P(x))$ represents the statement, "Everyone in CS220 has a cellphone."
-        \item $\exists x(C(x) \wedge Q(x))$ represents the statement, "Somebody in CS220 can solve quadratic equations."
-        \item $\exists x(C(x) \wedge \neg R(x))$ represents the statement, "Somebody in CS 220 does not want to be rich."
+        \item $\exists x(C(x) \land Q(x))$ represents the statement, "Somebody in CS220 can solve quadratic equations."
+        \item $\exists x(C(x) \land \neg R(x))$ represents the statement, "Somebody in CS 220 does not want to be rich."
     \end{enumerate}
 \end{enumerate}
 
@@ -57,18 +57,18 @@ The argument with the given premises and the conclusion $r$ is valid as shown be
 \begin{table}[H]
     \begin{tabular}{>{\stepcounter{rowno}\therowno. }l l}
          \multicolumn{1}{l}{\textbf{Step}} & \textbf{Reason} \\
-         $(p \wedge t) \to (r \vee s)$ & Premise\\
-         $\neg p \vee \neg t \vee r \vee s$ & Logical equivalence of (1)\\
-         $s \vee (\neg p \vee \neg t \vee r)$ & Commutative and Associative laws on (2)\\
+         $(p \land t) \to (r \lor s)$ & Premise\\
+         $\neg p \lor \neg t \lor r \lor s$ & Logical equivalence of (1)\\
+         $s \lor (\neg p \lor \neg t \lor r)$ & Commutative and Associative laws on (2)\\
          $\neg s$ & Premise\\
-         $\neg p \vee \neg t \vee r$ & Disjunctive syllogism on (3) and (4)\\
+         $\neg p \lor \neg t \lor r$ & Disjunctive syllogism on (3) and (4)\\
          $u \to p$ & Premise\\
-         $\neg u \vee p$ & Logical equivalence of (6)\\
-         $p \vee \neg u$ & Commutative law on (7)\\
-         $\neg u \vee \neg t \vee r$ & Resolution rule on (5) and (7)\\
-         $\neg (u \wedge t) \vee r$ & DeMorgan's Law on (9)\\
-         $(u \wedge t) \to r$ & Logical equivalence of (10)\\
-         $q \to (u \wedge t)$ & Premise\\
+         $\neg u \lor p$ & Logical equivalence of (6)\\
+         $p \lor \neg u$ & Commutative law on (7)\\
+         $\neg u \lor \neg t \lor r$ & Resolution rule on (5) and (7)\\
+         $\neg (u \land t) \lor r$ & DeMorgan's Law on (9)\\
+         $(u \land t) \to r$ & Logical equivalence of (10)\\
+         $q \to (u \land t)$ & Premise\\
          $q \to r$ & Hypothetical syllogism on (12) and (11)\\
          $q$ & Premise\\
          $r$ & Modus ponens on (14) and (13)
@@ -99,7 +99,7 @@ In the statement above, $p$ represents the statement, "$S$ is true," and $q$ rep
 The statement, "No one has more than two grandmothers," can be rewritten as, "There does not exists three different people that are grandmothers of the same person". We can translate this statement into a predicate as shown below:
 
 \[
-\forall x \Bigg[ \neg \exists w \exists y \exists z [ G(w,x) \wedge G(y,x) \wedge G(z,x) \wedge (w \neq y \neq z)] \> \Bigg]
+\forall x \Bigg[ \neg \exists w \exists y \exists z [ G(w,x) \land G(y,x) \land G(z,x) \land (w \neq y \neq z)] \> \Bigg]
 \]
 
 where $x$ is a person and $w$, $y$, and $z$ are grandmothers of person $x$.
