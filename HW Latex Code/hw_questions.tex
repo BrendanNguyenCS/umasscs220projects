@@ -1,5 +1,5 @@
 \documentclass[letterpaper, 12pt]{article}
-%\usepackage{nopageno} % For removing page numbers
+\usepackage{nopageno} % For removing page numbers
 \usepackage[utf8]{inputenc}
 \usepackage{color, colortbl} % For table coloring
 \usepackage{titling} % For positioning of title preamble
@@ -16,14 +16,14 @@
 \usepackage{listings}
 \lstdefinestyle{mystyle}{
     basicstyle=\ttfamily\small,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbersep=5pt,                  
-    showspaces=false,                
+    breakatwhitespace=false,
+    breaklines=true,    
+    captionpos=b, 
+    keepspaces=true,          
+    numbersep=5pt,       
+    showspaces=false,        
     showstringspaces=false,
-    showtabs=false,                  
+    showtabs=false,  
     tabsize=2
 }
 \lstset{style=mystyle}
@@ -32,6 +32,12 @@
 \usepackage{makecell}
 % For horizontal lists
 \usepackage{enumitem, tasks, varwidth}
+% For custom page numbers
+\usepackage{fancyhdr, lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{\small{\thepage \hspace{1pt} of \pageref{LastPage}}}
+\renewcommand{\headrulewidth}{0pt}
 
 % Move title area to the top of the page
 \setlength{\droptitle}{-4em}
@@ -49,7 +55,7 @@
 \begin{document}
 
 \maketitle
-
+\thispagestyle{fancy}
 \section*{Homework 1 (due February 3, 2022)}
 
 \begin{enumerate}
@@ -208,11 +214,11 @@ int bitCount(unsigned x) {
     \item Use a combinatorial argument to show that, for a positive integer $n$,
     \[\binom{2n}{2} = 2 \binom{n}{2} + n^2.\]
     \item In bridge, the 52 cards of a standard deck are dealt to four players. How many different ways are there to deal bridge hands to four players?
-    \item  A shelf holds 12 books in a row. How many ways are there to choose five books so that no two adjacent books are chosen? Hint: Represent the books that are chosen by bars and the books not chosen by stars. Count the number of sequences of five bars and seven stars so that no two bars are adjacent.
+    \item  A shelf holds 12 books in a row. How many ways are there to choose five books so that no two adjacent books are chosen? [\textit{Hint}: Represent the books that are chosen by bars and the books not chosen by stars. Count the number of sequences of five bars and seven stars so that no two bars are adjacent.]
     \item We distribute 5 balls into 7 distinguishable boxes. Each box can hold at most 1 ball. How many ways can we distribute the balls if
     \begin{enumerate}
-        \item the balls are distinguishable
-        \item the balls are indistinguishable
+        \item the balls are distinguishable?
+        \item the balls are indistinguishable?
     \end{enumerate}
 \end{enumerate}
 
