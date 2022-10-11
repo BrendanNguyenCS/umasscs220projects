@@ -39,8 +39,9 @@
 \renewcommand{\arraystretch}{1.25}
 % Disable paragraph indenting
 \setlength{\parindent}{0pt}
-% Change default font to sans font
-\renewcommand{\familydefault}{\sfdefault}
+% Times New Roman font
+\usepackage{times}
+\renewcommand{\ttdefault}{lmtt}
 % Change default vertical spacing for align environments
 \setlength{\jot}{7pt}
 
@@ -82,7 +83,7 @@ Firstly, we can denote a function $F(n)$ that is defined by the given statement 
 \end{align*}
 
 The statements above signify each side of the inequality. Because both sides are equal to each other, we can say that $F(n)$ is true for $n = 1$. Next, we assume that $F(x)$ is true and then prove that $F(n + 1)$ is true. In other words, if $AB = BA$, then $AB^x = B^xA$. By proving if $F(x + 1)$ is true, we will find out if $AB^{x + 1} = B^{x + 1}A$ given that $AB = BA$.
-
+\allowdisplaybreaks
 \begin{align*}
     AB^{x + 1} &= A \cdot (B^xB)\\
     &= (AB^x) \cdot B\\
@@ -97,11 +98,9 @@ Similar to before, we can say that $F(x + 1)$ is true when $F(x)$ is true. Final
 
 \section*{Question 3}
 The main issue with this induction proof is the basis step. By claiming that, "$a^0 = 1$ is true by the definition of $a^0$," they are making an incorrect assumption. In order for the inductive step to work correctly, the denominator used must be one.
-
 \[a^{k + 1} = \frac{a^k \cdot a^k}{a^{k - 1}}\]
 
 The denominator hints that you must have $k \geq 1$ but we need to start the induction at $k = 0$. However, when we start at $k = 0$, then we get
-
 \[a^1 = \frac{a^0 \cdot a^0}{a^{-1}}\]
 
 But, we don't know for certain that $a^{-1} = 1$.

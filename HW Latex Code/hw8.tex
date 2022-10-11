@@ -24,8 +24,9 @@
 \renewcommand{\arraystretch}{1.25}
 % Disable paragraph indenting
 \setlength{\parindent}{0pt}
-% Change default font to sans font
-\renewcommand{\familydefault}{\sfdefault}
+% Times New Roman font
+\usepackage{times}
+\renewcommand{\ttdefault}{lmtt}
 % Change default vertical spacing for align environments
 \setlength{\jot}{7pt}
 % Redefine list numbering system
@@ -46,7 +47,6 @@ Then, we need to consider that each row will also have 2 options, $\texttt{true}
 
 \section*{Question 2}
 There are 5 different congruence options for $a$ and 5 different congruence options for $b$. This means that there are 25 classes for the congruence of the pair $(a, b)$. Then, we can use pigeonhole principle to state that:
-
 \[\Big\lceil\frac{n}{25}\Big\rceil = 2\]
 
 Therefore, we can say that \boxed{\mathbf{26}} will guarantee that we have a repeating classes for the congruence of the pair $(a, b)$.
@@ -78,12 +78,11 @@ Given the letters ABCDEFGH,
 
 \section*{Question 5}
 The combinations that would satisfy the condition that there must be more women than men in the six person committee is as follows: 4 women and 2 men, 5 women and 1 man, or 6 women.
-
-\begin{flalign*}
+\begin{align*}
 \binom{15}{4} \cdot \binom{10}{2} &= \frac{15!}{4! \cdot 11!} \cdot \frac{10!}{2! \cdot 8!} = 1365 \cdot 45 = 61425\\
 \binom{15}{5} \cdot \binom{10}{1} &= \frac{15!}{5! \cdot 10!} \cdot \frac{10!}{1! \cdot 9!} = 3003 \cdot 10 = 30030\\
 \binom{15}{6} &= \frac{15!}{6! \cdot 9!} = 5005\\
 \binom{15}{4} \cdot \binom{10}{2} + \binom{15}{5} \cdot \binom{10}{1} + \binom{15}{6} &= 61425 + 30030 + 5005 = \boxed{\mathbf{96460}}
-\end{flalign*}
+\end{align*}
 
 \end{document}

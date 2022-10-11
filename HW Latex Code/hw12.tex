@@ -24,8 +24,9 @@
 \renewcommand{\arraystretch}{1.25}
 % Disable paragraph indenting
 \setlength{\parindent}{0pt}
-% Change default font to sans font
-\renewcommand{\familydefault}{\sfdefault}
+% Times New Roman font
+\usepackage{times}
+\renewcommand{\ttdefault}{lmtt}
 % Change default vertical spacing for align environments
 \setlength{\jot}{7pt}
 % Redefine list numbering system
@@ -41,7 +42,6 @@
 
 \section*{Question 1}
 The matrix representing $R^2$ can be found by multiplying the matrix that represents $R$ by itself.
-
 \[
 M_{R^2} = M_R \circ M_R = 
 \left[
@@ -112,7 +112,6 @@ For each of the matrices, they are transitive if all of the diagonals are all 1s
 
 \begin{enumerate}
     \item This relation is \textbf{reflexive} because all of its diagonals are 1's. The matrix to check for symmetry is:
-    
     \[
     \left[
     \begin{array}{c c c}
@@ -128,7 +127,6 @@ For each of the matrices, they are transitive if all of the diagonals are all 1s
     Because the matrix is not symmetric, we can say that the matrix is not a equivalence relation without checking for transitivity.
     
     \item This relation is \textbf{reflexive} because all of its diagonals are 1's. The matrix to check for symmetry is:
-    
     \[
     \left[
     \begin{array}{c c c c}
@@ -141,7 +139,6 @@ For each of the matrices, they are transitive if all of the diagonals are all 1s
     \]
     
     This matrix is the same as the original matrix so we can say that it is \textbf{symmetric}. To check for transitivity, we have the following:
-    
     \[
     M_{R^2} = M_R \circ M_R =
     \left[
@@ -176,7 +173,6 @@ For each of the matrices, they are transitive if all of the diagonals are all 1s
     Therefore, the matrix that represents $R$ represents an equivalence relation because it's reflexive, symmetric, and transitive.
     
     \item This relation is \textbf{reflexive} because all of its diagonals are 1's. The matrix to check for symmetry is:
-    
     \[
     \left[
     \begin{array}{c c c c}
@@ -189,7 +185,6 @@ For each of the matrices, they are transitive if all of the diagonals are all 1s
     \]
     
     This matrix is the same as the original matrix so we can say that it is \textbf{symmetric}. To check for transitivity, we have the following:
-    
     \[
     M_{R^2} = M_R \circ M_R = 
     \left[
@@ -233,7 +228,6 @@ We know that a relation is a partial ordering if it is reflexive, antisymmetric,
     $R$ is also \textbf{antisymmetric} because $m_{ij} = m_{ij} = 1$ is only true when $i = j$.
     
     We can use $M_{R^2} = M_R \circ M_R = M_R$ to check for transitivity.
-    
     \[
     M_{R^2} = M_R \circ M_R =
     \left[
@@ -269,7 +263,6 @@ We know that a relation is a partial ordering if it is reflexive, antisymmetric,
     $R$ is also \textbf{antisymmetric} because $m_{ij} = m_{ij} = 1$ is only true when $i = j$.
     
     We can use $M_{R^2} = M_R \circ M_R = M_R$ to check for transitivity.
-    
     \[
     M_{R^2} = M_R \circ M_R =
     \left[
@@ -305,7 +298,6 @@ We know that a relation is a partial ordering if it is reflexive, antisymmetric,
     $R$ is also \textbf{antisymmetric} because $m_{ij} = m_{ij} = 1$ is only true when $i = j$.
     
     We can use $M_{R^2} = M_R \circ M_R = M_R$ to check for transitivity.
-    
     \[
     M_{R^2} = M_R \circ M_R =
     \left[

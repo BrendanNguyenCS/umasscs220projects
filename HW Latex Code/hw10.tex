@@ -24,8 +24,9 @@
 \renewcommand{\arraystretch}{1.25}
 % Disable paragraph indenting
 \setlength{\parindent}{0pt}
-% Change default font to sans font
-\renewcommand{\familydefault}{\sfdefault}
+% Times New Roman font
+\usepackage{times}
+\renewcommand{\ttdefault}{lmtt}
 % Redefine list numbering system
 \renewcommand{\labelenumi}{(\alph{enumi})}
 
@@ -64,11 +65,9 @@ There are 26!, or about $4.03 \cdot 10^{26}$, total permutations of the 26 lower
 
 \begin{enumerate}
     \item To find the probability that the randomly set of lowercase letters contains the first 13 letters in order, we only need to consider the amount of permutations of the last 13 letters because our condition will be equally likely in each of these permutations. Therefore, the probability is:
-    
     \[P(\text{first 13 in order)} = \frac{_{13}P_{13}}{26!} = \frac{13!}{26!} = \frac{1}{13!} = 1.606 \cdot 10^{-10}\]
     
     \item To find the probability that the randomly set of lowercase letters contains a and z next to each other, we can simplify what we are permuting on. In other words, we can think of the set as permuting 25 objects, the letters b through y and ``az". In combination with the 2 permutations of ``az", we then find that there are 25! permutations of the 25 objects set described previously. Thus the probability is:
-    
     \[P(\text{a and z are adjacent}) = \frac{2 \cdot 25!}{26!} = \frac{1}{13} \approx 0.077 \equiv 7.7\%\]
     
     \item The probability that the randomly permuted set doesn't contain a and z adjacent to one another is just to opposite of the answer in part (c):
@@ -77,7 +76,7 @@ There are 26!, or about $4.03 \cdot 10^{26}$, total permutations of the 26 lower
 
 \section*{Question 5}
 We know that events $E$ and $F$ are independent if and only if $p(E \cap F) = p(E)p(F)$ from the class notes. We can list all of the possible bit strings of length three.
-
+\vspace{-0.5em}
 \setlength{\tabcolsep}{16pt}
 \begin{table}[H]
     \begin{tabular}{c c c}
@@ -86,8 +85,8 @@ We know that events $E$ and $F$ are independent if and only if $p(E \cap F) = p(
          010 & 101 & \\
     \end{tabular}
 \end{table}
+\vspace{-1.5em}
 From the list above, we can see that half of the bit strings have an odd number of 1's (\{001, 010, 100, 111\}) and half of them starts with 1 (\{100, 101, 110, 111\}). Therefore, $p(E) = \frac{1}{2}$ and $p(F) = \frac{1}{2}$. In addition, we can observe that two of the bit strings listed previously fits the criteria of when events $E$ and $F$ occur at the same time ($E \cap F$ : \{100, 111\}). Therefore, $p(E \cap F) = \frac{1}{4}$. Finally, we can see if the conditions for independent events is true in this situation. We observe that:
-
 \[p(E)p(F) = \left(\frac{1}{2}\right)\left(\frac{1}{2}\right) = \frac{1}{4} = p(E \cap F)\]
 Therefore, $E$ and $F$ are independent.
 

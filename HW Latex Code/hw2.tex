@@ -11,8 +11,9 @@
 \usepackage{array}
 \newcounter{rowno}
 \setcounter{rowno}{0}
-% Change default font to sans font
-\renewcommand{\familydefault}{\sfdefault}
+% Times New Roman font
+\usepackage{times}
+\renewcommand{\ttdefault}{lmtt}
 
 % Move title area to the top of the page
 \setlength{\droptitle}{-4em}
@@ -39,15 +40,15 @@
 \begin{enumerate}
     \item For the domain of $x$ being all students in CS220
     \begin{enumerate}
-        \item $\forall x(P(x))$ represents the statement, "Everyone in CS220 has a cellphone."
-        \item $\exists x(Q(x))$ represents the statement, "Somebody in CS220 can solve quadratic equations."
-        \item $\exists x(\neg R(x))$ represents the statement, "Somebody in CS 220 does not want to be rich."
+        \item $\forall x(P(x))$ represents the statement, ``Everyone in CS220 has a cellphone."
+        \item $\exists x(Q(x))$ represents the statement, ``Somebody in CS220 can solve quadratic equations."
+        \item $\exists x(\neg R(x))$ represents the statement, ``Somebody in CS 220 does not want to be rich."
     \end{enumerate}
-    \item For the domain of $x$ being all students and that $C(x)$ is a predicate for "$x$ is in CS220" 
+    \item For the domain of $x$ being all students and that $C(x)$ is a predicate for ``$x$ is in CS220" 
     \begin{enumerate}
-        \item $\forall x(C(x) \to P(x))$ represents the statement, "Everyone in CS220 has a cellphone."
-        \item $\exists x(C(x) \land Q(x))$ represents the statement, "Somebody in CS220 can solve quadratic equations."
-        \item $\exists x(C(x) \land \neg R(x))$ represents the statement, "Somebody in CS 220 does not want to be rich."
+        \item $\forall x(C(x) \to P(x))$ represents the statement, ``Everyone in CS220 has a cellphone."
+        \item $\exists x(C(x) \land Q(x))$ represents the statement, ``Somebody in CS220 can solve quadratic equations."
+        \item $\exists x(C(x) \land \neg R(x))$ represents the statement, ``Somebody in CS 220 does not want to be rich."
     \end{enumerate}
 \end{enumerate}
 
@@ -93,11 +94,10 @@ Let the conditional statement $S$ be $(p \to q) \to q$, then we can use a truth 
     \label{tab:1}
 \end{table}
 
-In the statement above, $p$ represents the statement, "$S$ is true," and $q$ represents the statement, "Unicorns live." If $S$ is a proposition (in other words $p \to q$ is $\texttt{true}$), then $q$ is $\texttt{true}$, meaning that "Unicorns live." If $S$ is not a proposition, then it has both $\texttt{true}$ and $\texttt{false}$ values. We know that if $S$ is $\texttt{true}$, then $p$ is $\texttt{true}$. Both $\texttt{true}$ and $\texttt{false}$ for $q$ still results in $\texttt{true}$ for $S$. If $S$ is $\texttt{false}$, then $(p \to q)$ is $\texttt{true}$, $p$ and $q$ are both $\texttt{false}$. Due to the fact that we can't determine the truth value of $S$, we can determine that $S$ is not a proposition by the definition that a statement can have a $\texttt{true}$ or $\texttt{false}$ value but not both.
+In the statement above, $p$ represents the statement, ``$S$ is true," and $q$ represents the statement, ``Unicorns live." If $S$ is a proposition (in other words $p \to q$ is $\texttt{true}$), then $q$ is $\texttt{true}$, meaning that ``Unicorns live." If $S$ is not a proposition, then it has both $\texttt{true}$ and $\texttt{false}$ values. We know that if $S$ is $\texttt{true}$, then $p$ is $\texttt{true}$. Both $\texttt{true}$ and $\texttt{false}$ for $q$ still results in $\texttt{true}$ for $S$. If $S$ is $\texttt{false}$, then $(p \to q)$ is $\texttt{true}$, $p$ and $q$ are both $\texttt{false}$. Due to the fact that we can't determine the truth value of $S$, we can determine that $S$ is not a proposition by the definition that a statement can have a $\texttt{true}$ or $\texttt{false}$ value but not both.
 
 \section*{Question 4}
-The statement, "No one has more than two grandmothers," can be rewritten as, "There does not exists three different people that are grandmothers of the same person". We can translate this statement into a predicate as shown below:
-
+The statement, ``No one has more than two grandmothers," can be rewritten as, "There does not exists three different people that are grandmothers of the same person". We can translate this statement into a predicate as shown below:
 \[
 \forall x \Bigg[ \neg \exists w \exists y \exists z [ G(w,x) \land G(y,x) \land G(z,x) \land (w \neq y \neq z)] \> \Bigg]
 \]

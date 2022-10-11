@@ -24,8 +24,9 @@
 \renewcommand{\arraystretch}{1.25}
 % Disable paragraph indenting
 \setlength{\parindent}{0pt}
-% Change default font to sans font
-\renewcommand{\familydefault}{\sfdefault}
+% Times New Roman font
+\usepackage{times}
+\renewcommand{\ttdefault}{lmtt}
 % Change default vertical spacing for align environments
 \setlength{\jot}{7pt}
 % Redefine list numbering system
@@ -41,15 +42,12 @@
 
 \section*{Question 1}
 The coefficients of $x^7$ and $x^8$ for the expansion of $(x + \frac{1}{x})^{15}$ can be found using the binomial theorem. The theorem states that given that $x$, $y$ are variables and $n$ is a nonnegative integer:
-
 \[(x+y)^n = \sum_{j=0}^{n} \binom{n}{j}x^{n-j}y^j = \binom{n}{0}x^n + \binom{n}{1}x^{n-1}y + \cdots + \binom{n}{n-1}xy^{n-1} + \binom{n}{n}y^n\]
 
 In the case of $(x + \frac{1}{x})^{15}$, our variables $x$, $y$, and $n$ are $x$, $\frac{1}{x}$, and 15 respectively as seen below:
-
 \[\left(x+ \frac{1}{x}\right)^{15} = \binom{15}{0}x^{15} + \binom{15}{1}x^{14}\left(\frac{1}{x}\right) + \binom{15}{2}x^{13}\left(\frac{1}{x}\right)^2 + \cdots + \binom{15}{14}x\left(\frac{1}{x}\right)^{14} + \binom{15}{15}\left(\frac{1}{x}\right)^{15}\]
 
 From this rule, we can simplify each term of the expansion of $(x + \frac{1}{x})^{15}$ since $y$ is a power of $x$. Therefore, we find that the exponents of $x$ for the 16 terms of the expansion are as follows: 15, 13, 11, 9, 7, 5, 3, 1, -1, -3, -5, -7, -9, -11, -13, -15. As we can see, the expansion doesn't contain any powers of $x$ of even multiplicity so there is \textbf{no} coefficient for $x^8$. Looking at the previously compiled list of exponents, we see that the $x^7$ appears as the fifth term of the expansion and its coefficient is:
-
 \[\binom{15}{4} = \frac{15!}{4!(15-4)!} = \frac{15!}{4! \cdot 11!} = 1365\]
 
 \section*{Question 2}
@@ -61,7 +59,6 @@ Using a combinatorial argument, we will assume that there are two groups A and B
 \end{itemize}
 
 Therefore, we can say that:
-
 \begin{flalign*}
     \binom{2n}{2} &= \binom{n}{1} \cdot \binom{n}{1} + \binom{n}{2} + \binom{n}{2}\\
     &= n \cdot n + 2\binom{n}{2}\\
@@ -70,47 +67,37 @@ Therefore, we can say that:
 
 \section*{Question 3}
 If a standard deck of 52 cards is a dealt to four players, each player will get 13, or $\frac{52}{4}$, cards. Then we can use the theorem for the number of permutations with distinguishable objects which allow us to compute the number of permutations of $n$ objects in $k$ different categories given by:
-
 \[\frac{n!}{n_1!n_2! \cdots n_k!}\]
 
 In this example, we know that $n = 52$, $k = 4$, and $n_1, n_2, n_3, n_4 = 13$. Applying these values to the previously mentioned theorem, we get:
-
 \[\frac{52!}{13! \cdot 13! \cdot 13! \cdot 13!} = \frac{52!}{(13!)^4} \approx 5.4 \cdot 10^{28} \text{ permutations}\]
 
 \section*{Question 4}
 We know that 7 books will not be selected (since we are choosing 5 books out of 12 total). We then create a model that represents the order of selected book using the bars and stars analogy that is hinted in the problem statement. This model would be:
-
 \[\underline{\hspace{0.25cm}} \star \underline{\hspace{0.25cm}} \star \underline{\hspace{0.25cm}} \star \underline{\hspace{0.25cm}} \star \underline{\hspace{0.25cm}} \star \underline{\hspace{0.25cm}} \star \underline{\hspace{0.25cm}} \star \underline{\hspace{0.25cm}}\]
 
 The above model suggests that we have 8 total options to place a book (as denoted by the $\underline{\hspace{0.25cm}}$) around the 7 books that won't be selected already in place (as denoted $\star$). Out of those 8 possible options, we need to place five (as denoted by $||$ below) as the above model guarantees that the none of the placed books will be adjacent to another one. One example is:
-
 \[|| \star || \star || \star \underline{\hspace{0.25cm}} \star || \star \underline{\hspace{0.25cm}} \star \underline{\hspace{0.25cm}} \star ||\]
 
 The total possible combinations is:
-
 \[\binom{8}{5} = \frac{8!}{5!(8-5)!} = \frac{8!}{5! \cdot 3!} = 56 \text{ ways}\]
 
 Another solution to this problem is adjusting our bars and stars model. In this model, we have 5 bars and 7 stars. Then, we first place 1 star between a pair of bars, which uses 4 stars. That means that we are left with 3 stars with places left $\relbar$ before the first bar, between 4 pairs of bars, and after that last bar. Therefore, the number of ways using this model is:
-
 \[\binom{6+3-1}{3} = \binom{8}{3} = \frac{8!}{3!(8-3)!} = \frac{8!}{3! \cdot 5!} = 56 \text{ ways}\]
 
 \section*{Question 5}
 
 \begin{enumerate}
     \item In order to find the number of ways to place 5 distinguishable balls into 7 distinguishable boxes, we have to find the number of permutations since order matters, which is given by: 
-    
     \[_{n}P_{k} = \frac{n!}{(n-k)!}\]
     
     For our problem, $n$ is the number of distinguishable boxes, 7, and $k$ is the number of distinguishable balls, 5.
-    
     \[_{7}P_{5} = \frac{7!}{(7-5)!} = \frac{7!}{2!} = 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 = 2520 \text{ permutations}\]
     
     \item In order to find the number of ways to place 5 indistinguishable balls into 7 distinguishable boxes, we have to find the number of combinations since order doesn't matter, which is given by:
-    
     \[_{n}C_{k} = \binom{n}{k} = \frac{n!}{k!(n-k)!}\]
     
     As with the previous part, $n$ is the number of distinguishable boxes, 7, but $k$ is the number of indistinguishable balls, 5.
-    
     \[\binom{7}{5} = \frac{7!}{5!(7-5)!} = \frac{7!}{5! \cdot 2!} = 21 \text{ combinations}\]
 \end{enumerate}
 

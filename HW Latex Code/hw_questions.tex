@@ -7,7 +7,7 @@
 \usepackage{comment} % For block commenting
 \usepackage{float} % For table positioning
 % For math equation formatting
-\usepackage{amsmath, amssymb, relsize, amsfonts}
+\usepackage{amsmath, amssymb, amsfonts}
 \newcommand{\PMod}[1]{\ (\mathrm{mod}\ #1)}
 \newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}
 \usepackage{parskip} % For automatic paragraph spacing/formatting
@@ -45,11 +45,12 @@
 \renewcommand{\arraystretch}{1.25}
 % Disable paragraph indenting
 \setlength{\parindent}{0pt}
-% Change default font to sans font
-\renewcommand{\familydefault}{\sfdefault}
+% Times New Roman font
+\usepackage{times}
+\renewcommand{\ttdefault}{lmtt}
 
-\title{UMass Boston CS220 Discrete Mathematics\\Homework Questions}
-\author{Professor: Ming Ouyang}
+\title{UMass Boston CS220 Discrete Mathematics\protect\\Homework Questions}
+\author{Ming Ouyang}
 \date{Spring 2022}
 
 \begin{document}
